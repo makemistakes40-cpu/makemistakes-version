@@ -1,4 +1,8 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+const BASE_URL = 
+  process.env.NEXT_PUBLIC_API_URL || 
+  (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+    ? 'http://localhost:5001/api' 
+    : 'https://backend-sigma-seven-41.vercel.app/api');
 
 export class ApiError extends Error {
   public statusCode: number;
