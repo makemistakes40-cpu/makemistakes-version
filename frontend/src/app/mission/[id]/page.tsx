@@ -153,16 +153,16 @@ export const authorize = (requiredRole: string) => {
               exit={{ opacity: 0 }}
               className="w-full"
             >
-              <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl relative overflow-hidden">
+              <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] text-left space-y-6 shadow-sm relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-4">
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-brand-violet bg-brand-violet/10 border border-brand-violet/20 px-3 py-1 rounded-full font-bold">
+                  <span className="text-[10px] uppercase font-sans tracking-widest text-brand-violet bg-brand-violet/10 border border-brand-violet/30 px-3 py-1 rounded-full font-bold">
                     XP Reward: {mission.xpReward} XP
                   </span>
                 </div>
 
                 <div className="space-y-2">
                   <span className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold">Active Onboarding Mission</span>
-                  <h2 className="text-2xl font-display font-bold tracking-tight text-white uppercase">{mission.title}</h2>
+                  <h2 className="text-2xl font-sans font-bold tracking-tight text-white uppercase">{mission.title}</h2>
                   <p className="text-xs text-brand-slate leading-relaxed max-w-2xl font-sans">{mission.description}</p>
                 </div>
 
@@ -197,14 +197,14 @@ export const authorize = (requiredRole: string) => {
               exit={{ opacity: 0 }}
               className="w-full"
             >
-              <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
-                <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">Concept: Role-Based Gates</h3>
+              <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] text-left space-y-6 shadow-sm">
+                <h3 className="text-lg font-sans font-bold tracking-tight text-white uppercase">Concept: Role-Based Gates</h3>
                 
                 <div className="space-y-4 text-xs text-brand-slate leading-relaxed">
                   <p>
                     Role-Based Access Control (RBAC) represents a foundation for securing SaaS architectures. Instead of defining access logic manually per API route, endpoints require a generic middleware check mapping authentication tokens context to specific roles.
                   </p>
-                  <blockquote className="border-l-2 border-brand-violet pl-4 font-mono text-[11px] bg-brand-violet/5 py-3 rounded-r-2xl pr-4">
+                  <blockquote className="border-l-2 border-brand-violet pl-4 font-mono text-[11px] bg-brand-violet/5 py-3 rounded-r-[12px] pr-4">
                     "Authentications prove who the user is. Authorizations declare what capabilities they possess."
                   </blockquote>
                   <p>
@@ -228,11 +228,11 @@ export const authorize = (requiredRole: string) => {
               exit={{ opacity: 0 }}
               className="w-full"
             >
-              <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
-                <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">Best Practices Sandbox</h3>
+              <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] text-left space-y-6 shadow-sm">
+                <h3 className="text-lg font-sans font-bold tracking-tight text-white uppercase">Best Practices Sandbox</h3>
 
                 <div className="space-y-4">
-                  <div className="p-4 bg-red-500/5 border border-red-500/10 rounded-2xl text-left space-y-2">
+                  <div className="p-4 bg-red-500/5 border border-red-500/10 rounded-[12px] text-left space-y-2">
                     <span className="text-[9px] font-mono uppercase text-red-400 font-bold">❌ Anti-Pattern (Hardcoded Scopes)</span>
                     <pre className="font-mono text-[10px] text-brand-slate leading-relaxed">
 {`app.post('/api/admin/users', (req, res) => {
@@ -242,7 +242,7 @@ export const authorize = (requiredRole: string) => {
                     </pre>
                   </div>
 
-                  <div className="p-4 bg-brand-emerald/5 border border-brand-emerald/10 rounded-2xl text-left space-y-2">
+                  <div className="p-4 bg-brand-emerald/5 border border-brand-emerald/10 rounded-[12px] text-left space-y-2">
                     <span className="text-[9px] font-mono uppercase text-brand-emerald font-bold">✔️ Production-Ready (Reusable Gates)</span>
                     <pre className="font-mono text-[10px] text-brand-slate leading-relaxed">
 {`// Mount middleware gating routing scopes
@@ -267,13 +267,13 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
               exit={{ opacity: 0 }}
               className="w-full max-w-xl"
             >
-              <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
-                <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">DNA Security Check</h3>
+              <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] text-left space-y-6 shadow-sm">
+                <h3 className="text-lg font-sans font-bold tracking-tight text-white uppercase">DNA Security Check</h3>
                 
                 <p className="text-xs text-brand-slate leading-relaxed">
                   Which HTTP status code should be returned if a signed-in student attempts to access a protected administration workspace endpoint?
                 </p>
-
+ 
                 <div className="space-y-3">
                   {[
                     '401 Unauthorized',
@@ -286,7 +286,7 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
                       <button
                         key={idx}
                         onClick={() => setSelectedAnswer(idx)}
-                        className={`w-full text-left px-4 py-3 rounded-2xl text-xs transition-all font-semibold ${
+                        className={`w-full text-left px-4 py-3 rounded-[12px] text-xs transition-all font-semibold ${
                           isSelected ? 'bg-brand-violet text-white' : 'bg-brand-border text-brand-slate hover:bg-brand-border/60'
                         }`}
                       >
@@ -318,9 +318,9 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
               exit={{ opacity: 0 }}
               className="w-full max-w-3xl"
             >
-              <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
+              <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] text-left space-y-6 shadow-sm">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">Mission Sandbox Playground</h3>
+                  <h3 className="text-lg font-sans font-bold tracking-tight text-white uppercase">Mission Sandbox Playground</h3>
                   <span className="text-[10px] font-sans text-brand-slate">Required: export authorize middleware</span>
                 </div>
 
@@ -331,7 +331,7 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
                     <textarea
                       value={userCode}
                       onChange={(e) => setUserCode(e.target.value)}
-                      className="w-full min-h-[250px] p-4 bg-brand-bg border border-brand-border rounded-2xl text-xs font-mono text-foreground focus:outline-none focus:border-brand-violet leading-relaxed"
+                      className="w-full min-h-[250px] p-4 bg-brand-bg border border-brand-border rounded-[12px] text-xs font-mono text-foreground focus:outline-none focus:border-brand-violet leading-relaxed"
                     />
                     <Button
                       variant="primary"
@@ -345,8 +345,8 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
                   </div>
 
                   {/* Sidebar checks */}
-                  <div className="md:col-span-1 p-4 bg-brand-card border border-brand-border rounded-2xl space-y-4">
-                    <h4 className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold">AI Diagnostics Logs</h4>
+                  <div className="md:col-span-1 p-4 bg-brand-card border border-brand-border rounded-[16px] space-y-4">
+                    <h4 className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold">AI Diagnostics Logs</h4>
                     
                     {feedback.length === 0 ? (
                       <div className="text-[10px] text-brand-slate/50 font-mono py-8 text-center leading-relaxed">
@@ -381,12 +381,12 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
               animate={{ opacity: 1, scale: 1 }}
               className="w-full max-w-md text-center"
             >
-              <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
+              <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6">
                 <span className="text-4xl animate-bounce block">🏆</span>
-                <h3 className="text-2xl font-display font-bold tracking-tight text-white uppercase">Mission Accomplished!</h3>
+                <h3 className="text-2xl font-sans font-bold tracking-tight text-white uppercase">Mission Accomplished!</h3>
                 
-                <div className="p-4 bg-brand-emerald/10 border border-brand-emerald/20 rounded-2xl inline-block px-8">
-                  <span className="text-2xl font-display font-black text-brand-emerald">+{mission.xpReward} XP</span>
+                <div className="p-4 bg-brand-emerald/10 border border-brand-emerald/20 rounded-[12px] inline-block px-8">
+                  <span className="text-2xl font-sans font-black text-brand-emerald">+{mission.xpReward} XP</span>
                   <span className="text-[9px] uppercase font-mono text-brand-slate block mt-1">Awarded to Profile</span>
                 </div>
 

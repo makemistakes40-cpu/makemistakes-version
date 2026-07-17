@@ -19,10 +19,10 @@ export function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-sans font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-violet disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-sans font-semibold rounded-[10px] transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-violet disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-brand-violet text-white hover:bg-brand-violet-hover shadow-lg shadow-brand-violet/15 hover:shadow-brand-violet/35 hover:scale-[1.01]',
+    primary: 'bg-brand-violet text-white hover:bg-brand-violet-hover hover:scale-[1.01]',
     secondary: 'bg-brand-card text-foreground border border-brand-border hover:bg-brand-card-light hover:border-brand-border-hover hover:text-white',
     outline: 'bg-transparent text-brand-slate border border-brand-border hover:border-brand-violet hover:text-white hover:bg-brand-violet/5',
     ghost: 'bg-transparent text-brand-slate hover:bg-brand-card hover:text-white',
@@ -37,8 +37,8 @@ export function Button({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.99 }}
       className={`
         ${baseStyles}
         ${variants[variant]}

@@ -176,7 +176,7 @@ export default function DashboardPage() {
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
           </svg>
-          <span className="text-brand-slate text-sm font-display">Syncing layout workspace...</span>
+          <span className="text-brand-slate text-sm font-sans">Syncing layout workspace...</span>
         </div>
       </div>
     );
@@ -193,12 +193,12 @@ export default function DashboardPage() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-4 rounded-2xl bg-brand-violet/10 border border-brand-violet/25 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+            className="p-4 rounded-[16px] bg-brand-violet/10 border border-brand-violet/25 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
           >
             <div className="flex items-center space-x-3">
               <span className="text-xl">⚡</span>
               <div className="space-y-0.5">
-                <h4 className="text-xs font-display font-bold text-white uppercase tracking-wider">
+                <h4 className="text-xs font-sans font-bold text-white uppercase tracking-wider">
                   Free Mode Active
                 </h4>
                 <p className="text-[11px] text-brand-slate">
@@ -215,7 +215,7 @@ export default function DashboardPage() {
         {/* Profile Banner */}
         <section className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-brand-border/45 pb-8">
           <div>
-            <h1 className="text-3xl font-display font-bold tracking-tight text-white">
+            <h1 className="text-3xl font-sans font-bold tracking-tight text-white">
               {isAdminViewActive ? 'Admin Portal' : 'Student Dashboard'}
             </h1>
             <p className="text-sm text-brand-slate font-sans">
@@ -238,13 +238,13 @@ export default function DashboardPage() {
             )}
 
             {user && (
-              <div className="flex items-center space-x-3 bg-brand-card px-4 py-3 rounded-2xl border border-brand-border">
-                <div className="h-10 w-10 rounded-full bg-brand-violet/25 flex items-center justify-center font-display font-bold text-brand-violet border border-brand-violet/30">
+              <div className="flex items-center space-x-3 bg-brand-card px-4 py-3 rounded-[16px] border border-brand-border">
+                <div className="h-10 w-10 rounded-full bg-brand-violet/25 flex items-center justify-center font-sans font-bold text-brand-violet border border-brand-violet/30">
                   {user.firstName[0]}
                 </div>
                 <div>
                   <div className="flex items-center space-x-2">
-                    <h4 className="text-xs font-display font-semibold text-white">
+                    <h4 className="text-xs font-sans font-semibold text-white">
                       {user.firstName} {user.lastName}
                     </h4>
                     <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider ${
@@ -282,13 +282,13 @@ export default function DashboardPage() {
               exit={{ opacity: 0, y: -15 }}
               className="max-w-2xl mx-auto space-y-8"
             >
-              <Card glow className="bg-brand-card/85 p-8 border border-brand-border relative overflow-hidden">
+              <Card className="bg-brand-card p-8 border border-brand-border relative overflow-hidden">
                 <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-brand-border">
                   <div className="h-8 w-8 bg-brand-violet/20 border border-brand-violet/30 text-brand-violet rounded-full flex items-center justify-center font-bold">
                     🤖
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-sm text-white">AI Roadmap Assistant</h3>
+                    <h3 className="font-sans font-bold text-sm text-white">AI Roadmap Assistant</h3>
                     <p className="text-[10px] text-brand-slate">Let's compile your customized engineering track</p>
                   </div>
                 </div>
@@ -301,7 +301,7 @@ export default function DashboardPage() {
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </svg>
                     <div className="space-y-2">
-                      <h4 className="text-white font-display font-bold text-lg">AI is architecting your roadmap...</h4>
+                      <h4 className="text-white font-sans font-bold text-lg">AI is architecting your roadmap...</h4>
                       <p className="text-xs text-brand-slate max-w-sm">
                         Combining goals with your preferred stack to build dedicated debugging assignments.
                       </p>
@@ -321,7 +321,7 @@ export default function DashboardPage() {
                     <div>
                       {wizardStep === 1 && (
                         <div className="space-y-4">
-                          <p className="text-xs font-display text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-xl border border-brand-violet/10">
+                          <p className="text-xs font-sans text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-[12px] border border-brand-violet/10">
                             "First, tell me about your **Current Skills**? Mention technologies, frameworks, or languages you already feel comfortable with."
                           </p>
                           <Input
@@ -335,7 +335,7 @@ export default function DashboardPage() {
 
                       {wizardStep === 2 && (
                         <div className="space-y-4">
-                          <p className="text-xs font-display text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-xl border border-brand-violet/10 mb-4">
+                          <p className="text-xs font-sans text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-[12px] border border-brand-violet/10 mb-4">
                             "What is your dream **Career Goal**? We'll personalize your learning roadmap, coding challenges, projects, interview preparation, and skill recommendations."
                           </p>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 max-h-[220px] overflow-y-auto pr-1">
@@ -349,7 +349,7 @@ export default function DashboardPage() {
                                     setCareerGoal(goal.id);
                                     setCareerGoalText('');
                                   }}
-                                  className={`p-3 rounded-xl border text-left text-xs transition-all relative ${
+                                  className={`p-3 rounded-[12px] border text-left text-xs transition-all relative ${
                                     isSelected
                                       ? 'border-brand-violet bg-brand-violet/10 text-white font-bold'
                                       : 'border-brand-border bg-brand-card text-brand-slate hover:border-brand-border/60 hover:bg-brand-card/80'
@@ -371,7 +371,7 @@ export default function DashboardPage() {
                                   animate={{ opacity: 1, y: 0 }}
                                   className="space-y-1 mt-3"
                                 >
-                                  <label className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold block">
+                                  <label className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold block">
                                     {currentGoalObj.inputLabel} {currentGoalObj.required && <span className="text-red-500">*</span>}
                                   </label>
                                   <Input
@@ -391,13 +391,13 @@ export default function DashboardPage() {
 
                       {wizardStep === 3 && (
                         <div className="space-y-4">
-                          <p className="text-xs font-display text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-xl border border-brand-violet/10">
+                          <p className="text-xs font-sans text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-[12px] border border-brand-violet/10">
                             "Understood. How would you describe your current **Coding Experience**?"
                           </p>
                           <select
                             value={experience}
                             onChange={(e) => setExperience(e.target.value)}
-                            className="w-full px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-sm focus:outline-none focus:border-brand-violet"
+                            className="w-full px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-sm focus:outline-none focus:border-brand-violet"
                           >
                             <option value="Beginner">Beginner (0-1 years)</option>
                             <option value="Intermediate">Intermediate (1-3 years)</option>
@@ -408,13 +408,13 @@ export default function DashboardPage() {
 
                       {wizardStep === 4 && (
                         <div className="space-y-4">
-                          <p className="text-xs font-display text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-xl border border-brand-violet/10">
+                          <p className="text-xs font-sans text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-[12px] border border-brand-violet/10">
                             "What is your **Preferred Language** for learning and solving coding problems?"
                           </p>
                           <select
                             value={languages}
                             onChange={(e) => setLanguages(e.target.value)}
-                            className="w-full px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-sm focus:outline-none focus:border-brand-violet"
+                            className="w-full px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-sm focus:outline-none focus:border-brand-violet"
                           >
                             <option>TypeScript</option>
                             <option>JavaScript</option>
@@ -429,13 +429,13 @@ export default function DashboardPage() {
 
                       {wizardStep === 5 && (
                         <div className="space-y-4">
-                          <p className="text-xs font-display text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-xl border border-brand-violet/10">
+                          <p className="text-xs font-sans text-white leading-relaxed bg-brand-violet/5 p-3.5 rounded-[12px] border border-brand-violet/10">
                             "Almost done! How much **Time is available** weekly for exercises?"
                           </p>
                           <select
                             value={timeAvailable}
                             onChange={(e) => setTimeAvailable(e.target.value)}
-                            className="w-full px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-sm focus:outline-none focus:border-brand-violet"
+                            className="w-full px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-sm focus:outline-none focus:border-brand-violet"
                           >
                             <option value="3 hours / week">3 hours / week</option>
                             <option value="5 hours / week">5 hours / week</option>
@@ -497,7 +497,7 @@ export default function DashboardPage() {
               {/* Personalized roadmap timeline milestones */}
               <div className="lg:col-span-2 space-y-6">
                 <div className="flex flex-col space-y-1">
-                  <h3 className="text-xl font-display font-bold tracking-tight text-white flex items-center space-x-2">
+                  <h3 className="text-xl font-sans font-bold tracking-tight text-white flex items-center space-x-2">
                     <span>🎯 Your AI Learning Path</span>
                   </h3>
                   <span className="text-[10px] text-brand-violet font-sans uppercase tracking-widest font-semibold">
@@ -575,11 +575,11 @@ export default function DashboardPage() {
                 
                 {/* AI Career Toolkit & Personalization details */}
                 {roadmap.personalization && (
-                  <Card glow className="bg-brand-card/85 p-6 border border-brand-border space-y-4">
+                  <Card className="bg-brand-card p-6 border border-brand-border space-y-4">
                     <div className="flex items-center space-x-2.5 border-b border-brand-border/40 pb-3">
                       <span className="text-xl">🎯</span>
                       <div>
-                        <h4 className="text-xs font-display font-bold text-white uppercase tracking-wider">
+                        <h4 className="text-xs font-sans font-bold text-white uppercase tracking-wider">
                           AI Career Toolkit
                         </h4>
                         <p className="text-[9px] text-brand-slate uppercase font-mono tracking-wider">
@@ -658,18 +658,18 @@ export default function DashboardPage() {
                 )}
 
                 <div className="flex flex-col space-y-1">
-                  <h3 className="text-lg font-display font-bold tracking-tight text-white flex items-center">
+                  <h3 className="text-lg font-sans font-bold tracking-tight text-white flex items-center">
                     <span>🏆 Global Leaderboard</span>
                   </h3>
                   <span className="text-[10px] text-brand-slate font-sans">Compete with global peers solving mistakes</span>
                 </div>
 
-                <Card glow className="bg-brand-card/75 p-6 border border-brand-border">
+                <Card className="bg-brand-card p-6 border border-brand-border">
                   <div className="space-y-4">
                     {LEADERBOARD_PEERS.map((peer) => (
                       <div
                         key={peer.rank}
-                        className={`flex items-center justify-between p-3 rounded-xl border transition-all duration-300 ${
+                        className={`flex items-center justify-between p-3 rounded-[12px] border transition-all duration-300 ${
                           peer.isUser
                             ? 'bg-brand-violet/10 border-brand-violet/30'
                             : 'bg-brand-card/40 border-brand-border/30'
@@ -686,7 +686,7 @@ export default function DashboardPage() {
                           </span>
                           <span className="text-base">{peer.avatar}</span>
                           <div>
-                            <span className="text-xs font-display font-semibold text-white block">
+                            <span className="text-xs font-sans font-semibold text-white block">
                               {peer.name} {peer.isUser && '(You)'}
                             </span>
                             {peer.isPro && (

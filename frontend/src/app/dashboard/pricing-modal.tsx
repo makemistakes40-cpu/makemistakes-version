@@ -86,17 +86,14 @@ export function PricingModal({ isOpen, onClose, onSelectPlan }: PricingModalProp
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            className="bg-brand-card/95 border border-brand-border p-8 rounded-3xl w-full max-w-5xl z-10 relative overflow-hidden my-8"
+            className="bg-brand-card border border-brand-border p-8 rounded-[20px] w-full max-w-5xl z-10 relative overflow-hidden my-8"
           >
-            {/* Ambient background glows */}
-            <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-brand-violet/10 blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-brand-violet/5 blur-[100px] pointer-events-none" />
 
             <div className="text-center space-y-2 mb-10 relative z-10">
-              <span className="text-xs uppercase font-mono tracking-widest text-brand-violet font-bold">
+              <span className="text-xs uppercase font-sans tracking-widest text-brand-violet font-bold">
                 Membership Plans
               </span>
-              <h2 className="text-3xl font-display font-black text-white">
+              <h2 className="text-3xl font-sans font-black text-white">
                 Choose Your Learning Tier
               </h2>
               <p className="text-sm text-brand-slate max-w-md mx-auto">
@@ -109,10 +106,9 @@ export function PricingModal({ isOpen, onClose, onSelectPlan }: PricingModalProp
               {PLANS.map((plan) => (
                 <Card
                   key={plan.id}
-                  glow={plan.isPopular}
-                  className={`bg-brand-card/75 border p-6 flex flex-col justify-between relative overflow-hidden ${
+                  className={`bg-brand-card border p-6 flex flex-col justify-between relative overflow-hidden ${
                     plan.isPopular
-                      ? 'border-brand-violet/50 shadow-lg shadow-brand-violet/5 scale-102 z-10'
+                      ? 'border-brand-violet/50 scale-102 z-10'
                       : 'border-brand-border'
                   }`}
                 >
@@ -124,7 +120,7 @@ export function PricingModal({ isOpen, onClose, onSelectPlan }: PricingModalProp
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-display font-bold text-lg text-white">
+                      <h4 className="font-sans font-bold text-lg text-white">
                         {plan.name}
                       </h4>
                       <p className="text-xs text-brand-slate mt-1 leading-relaxed">
@@ -133,7 +129,7 @@ export function PricingModal({ isOpen, onClose, onSelectPlan }: PricingModalProp
                     </div>
 
                     <div className="flex items-baseline space-x-1 py-2">
-                      <span className="text-4xl font-display font-black text-white">
+                      <span className="text-4xl font-sans font-black text-white">
                         {plan.price}
                       </span>
                       <span className="text-xs text-brand-slate">

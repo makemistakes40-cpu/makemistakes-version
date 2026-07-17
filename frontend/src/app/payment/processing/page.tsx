@@ -73,7 +73,7 @@ function ProcessingContent() {
     return (
       <div className="text-center py-16 space-y-4">
         <span className="text-3xl">⚠️</span>
-        <h3 className="text-white font-display font-black text-lg">No Order reference ID found.</h3>
+        <h3 className="text-white font-sans font-bold text-lg">No Order reference ID found.</h3>
         <p className="text-xs text-brand-slate">Please launch upgrade portal from the dashboard.</p>
         <Button variant="primary" onClick={() => router.push('/dashboard')}>
           Go to Dashboard
@@ -97,10 +97,8 @@ function ProcessingContent() {
   return (
     <div className="max-w-2xl mx-auto space-y-8">
       {/* Header status card */}
-      <Card glow className="bg-brand-card/90 p-8 border border-brand-border text-center space-y-6 relative overflow-hidden">
-        {/* Glow sphere background */}
-        <div className="absolute top-1/2 left-1/2 w-40 h-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-violet/10 blur-[80px] pointer-events-none" />
-
+      <Card className="bg-brand-card p-8 border border-brand-border text-center space-y-6 relative overflow-hidden">
+        
         <div className="space-y-4">
           <div className="flex justify-center">
             {paymentStatus === 'REJECTED' ? (
@@ -118,7 +116,7 @@ function ProcessingContent() {
           </div>
 
           <div className="space-y-1">
-            <h2 className="text-2xl font-display font-black text-white">
+            <h2 className="text-2xl font-sans font-black text-white">
               {paymentStatus === 'REJECTED' ? 'Verification Failed' : 'Verifying Transaction'}
             </h2>
             <p className="text-xs text-brand-slate max-w-sm mx-auto leading-relaxed">
@@ -131,11 +129,11 @@ function ProcessingContent() {
 
         {/* Rejection notice box */}
         {paymentStatus === 'REJECTED' && rejectionReason && (
-          <div className="p-4 bg-red-500/5 border border-red-500/25 rounded-2xl text-left space-y-1">
+          <div className="p-4 bg-red-500/5 border border-red-500/25 rounded-[12px] text-left space-y-1">
             <span className="text-[9px] uppercase font-mono font-bold text-red-400 tracking-widest block">
               Auditor Rejection Reason:
             </span>
-            <p className="text-xs text-brand-slate font-display leading-relaxed">
+            <p className="text-xs text-brand-slate font-sans leading-relaxed">
               {rejectionReason}
             </p>
           </div>
@@ -159,11 +157,11 @@ function ProcessingContent() {
 
       {/* Live vertical timeline logs */}
       <div className="space-y-4">
-        <h3 className="text-sm font-display font-bold uppercase tracking-widest text-brand-slate">
+        <h3 className="text-sm font-sans font-bold uppercase tracking-widest text-brand-slate">
           Transaction Timeline
         </h3>
 
-        <Card className="bg-brand-card/75 border border-brand-border p-6 space-y-6 relative">
+        <Card className="bg-brand-card border border-brand-border p-6 space-y-6 relative">
           <div className="absolute left-[27px] top-8 bottom-8 w-0.5 bg-brand-border/45" />
 
           {timeline.map((step, idx) => (
@@ -174,7 +172,7 @@ function ProcessingContent() {
               </div>
               <div className="space-y-0.5 flex-grow">
                 <div className="flex justify-between items-baseline">
-                  <h4 className="text-xs font-display font-bold text-white">
+                  <h4 className="text-xs font-sans font-bold text-white">
                     {step.title}
                   </h4>
                   <span className="text-[9px] font-mono text-brand-slate/50">

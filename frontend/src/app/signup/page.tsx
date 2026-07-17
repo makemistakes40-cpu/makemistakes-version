@@ -143,17 +143,16 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-brand-bg px-4 relative py-12">
-      <div className="absolute top-1/2 left-1/2 w-[35rem] h-[35rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-violet/5 blur-[120px] pointer-events-none" />
 
       <div className="w-full max-w-lg z-10">
         <div className="text-center mb-8">
-          <Link href="/" className="font-display font-bold text-3xl tracking-tight text-white inline-block mb-3">
+          <Link href="/" className="font-sans font-bold text-3xl tracking-tight text-white inline-block mb-3">
             Make<span className="text-brand-violet">Mistakes</span>
           </Link>
           <p className="text-sm text-brand-slate font-sans">Create your account and unlock personalized lessons</p>
         </div>
 
-        <Card glow className="bg-brand-card/85 p-8 border border-brand-border overflow-hidden">
+        <Card className="bg-brand-card p-8 border border-brand-border overflow-hidden">
           
           {/* Progress Indicators */}
           {role === 'STUDENT' && (
@@ -176,7 +175,7 @@ export default function SignupPage() {
           )}
 
           {serverError && (
-            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-red-400 font-sans font-semibold text-center mb-6">
+            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-[12px] text-xs text-red-400 font-sans font-semibold text-center mb-6">
               {serverError}
             </div>
           )}
@@ -248,7 +247,7 @@ export default function SignupPage() {
                         <button
                           type="button"
                           onClick={() => setRole('STUDENT')}
-                          className={`py-2.5 px-3 rounded-xl border text-xs font-sans font-semibold transition-all duration-300 cursor-pointer ${
+                          className={`py-2.5 px-3 rounded-[12px] border text-xs font-sans font-semibold transition-all duration-300 cursor-pointer ${
                             role === 'STUDENT'
                               ? 'bg-brand-violet/10 border-brand-violet text-white'
                               : 'bg-brand-card border-brand-border text-brand-slate hover:border-brand-violet/30'
@@ -260,7 +259,7 @@ export default function SignupPage() {
                         <button
                           type="button"
                           onClick={() => setRole('RECRUITER')}
-                          className={`py-2.5 px-3 rounded-xl border text-xs font-sans font-semibold transition-all duration-300 cursor-pointer ${
+                          className={`py-2.5 px-3 rounded-[12px] border text-xs font-sans font-semibold transition-all duration-300 cursor-pointer ${
                             role === 'RECRUITER'
                               ? 'bg-brand-violet/10 border-brand-violet text-white'
                               : 'bg-brand-card border-brand-border text-brand-slate hover:border-brand-violet/30'
@@ -311,13 +310,13 @@ export default function SignupPage() {
                     </div>
 
                     <div className="flex flex-col space-y-2">
-                      <label className="text-xs font-display font-medium text-brand-slate tracking-wider uppercase">
+                      <label className="text-xs font-sans font-medium text-brand-slate tracking-wider uppercase">
                         Current Year
                       </label>
                       <select
                         value={currentYear}
                         onChange={(e) => setCurrentYear(e.target.value)}
-                        className="px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-sm focus:outline-none focus:border-brand-violet"
+                        className="px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-sm focus:outline-none focus:border-brand-violet"
                         disabled={loading}
                       >
                         <option>1st Year</option>
@@ -334,13 +333,13 @@ export default function SignupPage() {
                   <>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="flex flex-col space-y-2">
-                        <label className="text-xs font-display font-medium text-brand-slate tracking-wider uppercase">
+                        <label className="text-xs font-sans font-medium text-brand-slate tracking-wider uppercase">
                           Programming Level
                         </label>
                         <select
                           value={programmingLevel}
                           onChange={(e) => setProgrammingLevel(e.target.value)}
-                          className="px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-sm focus:outline-none focus:border-brand-violet"
+                          className="px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-sm focus:outline-none focus:border-brand-violet"
                           disabled={loading}
                         >
                           <option>Beginner</option>
@@ -350,13 +349,13 @@ export default function SignupPage() {
                       </div>
 
                       <div className="flex flex-col space-y-2">
-                        <label className="text-xs font-display font-medium text-brand-slate tracking-wider uppercase">
+                        <label className="text-xs font-sans font-medium text-brand-slate tracking-wider uppercase">
                           Preferred Language
                         </label>
                         <select
                           value={preferredLanguage}
                           onChange={(e) => setPreferredLanguage(e.target.value)}
-                          className="px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-sm focus:outline-none focus:border-brand-violet"
+                          className="px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-sm focus:outline-none focus:border-brand-violet"
                           disabled={loading}
                         >
                           <option>TypeScript</option>
@@ -371,13 +370,13 @@ export default function SignupPage() {
                     </div>
 
                     <div className="flex flex-col space-y-2">
-                      <label className="text-xs font-display font-medium text-brand-slate tracking-wider uppercase">
+                      <label className="text-xs font-sans font-medium text-brand-slate tracking-wider uppercase">
                         Interested Career Path
                       </label>
                       <select
                         value={interestedCareer}
                         onChange={(e) => setInterestedCareer(e.target.value)}
-                        className="px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-sm focus:outline-none focus:border-brand-violet"
+                        className="px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-sm focus:outline-none focus:border-brand-violet"
                         disabled={loading}
                       >
                         <option>Full-stack Developer</option>

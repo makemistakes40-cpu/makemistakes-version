@@ -35,10 +35,8 @@ export function JoinAccessSection() {
 
   return (
     <section className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-      {/* Background glowing decorations */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-r from-brand-violet/10 to-brand-emerald/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-      <Card glow className="bg-brand-card/45 border border-brand-border py-14 px-8 md:px-16 flex flex-col items-center">
+      <Card className="bg-brand-card/45 border border-brand-border py-14 px-8 md:px-16 flex flex-col items-center">
         <AnimatePresence mode="wait">
           {!success ? (
             <motion.div
@@ -50,10 +48,10 @@ export function JoinAccessSection() {
               className="space-y-6 max-w-xl w-full flex flex-col items-center"
             >
               <div className="space-y-3">
-                <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20 text-[10px] font-mono tracking-wider font-bold text-brand-emerald uppercase">
+                <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20 text-[10px] font-sans tracking-wider font-bold text-brand-emerald uppercase">
                   <span>🚀 Limited Release</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-white">
+                <h2 className="text-3xl sm:text-4xl font-sans font-bold tracking-tight text-white">
                   Join Early Access Waitlist
                 </h2>
                 <p className="text-sm text-brand-slate leading-relaxed font-sans">
@@ -110,18 +108,18 @@ export function JoinAccessSection() {
               transition={{ duration: 0.4, ease: 'easeOut' }}
               className="space-y-6 max-w-md w-full py-6 flex flex-col items-center"
             >
-              <div className="h-16 w-16 bg-brand-emerald/15 border border-brand-emerald/30 text-brand-emerald rounded-full flex items-center justify-center text-3xl shadow-lg shadow-brand-emerald/10">
+              <div className="h-16 w-16 bg-brand-emerald/15 border border-brand-emerald/30 text-brand-emerald rounded-full flex items-center justify-center text-3xl">
                 ✓
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl font-display font-bold tracking-tight text-white">
+                <h3 className="text-2xl font-sans font-bold tracking-tight text-white">
                   Invitation Request Confirmed!
                 </h3>
                 <p className="text-sm text-brand-slate leading-relaxed font-sans">
-                  Thank you, <strong className="text-white">{name}</strong>. We've added <span className="text-brand-violet font-semibold font-mono">{email}</span> to our developer onboarding list. You will receive an access token as spots open up.
+                  Thank you, <strong className="text-white">{name}</strong>. We've added <span className="text-brand-violet font-semibold">{email}</span> to our developer onboarding list. You will receive an access token as spots open up.
                 </p>
               </div>
-              <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-2xl w-full text-xs text-brand-slate font-mono uppercase tracking-wider space-y-1.5">
+              <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-[16px] w-full text-xs text-brand-slate font-mono uppercase tracking-wider space-y-1.5">
                 <div className="flex justify-between">
                   <span>Registration Spot:</span>
                   <span className="text-white font-bold">#MM-{Math.floor(1000 + Math.random() * 9000)}</span>

@@ -115,9 +115,6 @@ export default function OnboardingPage() {
 
   return (
     <div className="min-h-screen bg-brand-bg text-foreground flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-violet/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-emerald/5 rounded-full blur-[100px] pointer-events-none" />
 
       <AnimatePresence mode="wait">
         {/* STEP 1: CINEMATIC WELCOME */}
@@ -129,9 +126,9 @@ export default function OnboardingPage() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="w-full max-w-xl text-center"
           >
-            <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
+            <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6">
               <span className="text-4xl">👑</span>
-              <h2 className="text-3xl font-display font-bold tracking-tight text-white uppercase">
+              <h2 className="text-3xl font-sans font-bold tracking-tight text-white uppercase">
                 Welcome to Pro Academy
               </h2>
               <p className="text-xs text-brand-slate max-w-md mx-auto leading-relaxed font-sans">
@@ -139,28 +136,28 @@ export default function OnboardingPage() {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 text-left">
-                <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-2xl flex items-center space-x-3">
+                <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-[12px] flex items-center space-x-3">
                   <span className="text-xl">🗺️</span>
                   <div>
                     <h4 className="text-xs font-bold text-white uppercase">4 Stages Roadmap</h4>
                     <span className="text-[10px] text-brand-slate">Custom skills & milestones</span>
                   </div>
                 </div>
-                <div className="p-4 bg-brand-emerald/5 border border-brand-emerald/10 rounded-2xl flex items-center space-x-3">
+                <div className="p-4 bg-brand-emerald/5 border border-brand-emerald/10 rounded-[12px] flex items-center space-x-3">
                   <span className="text-xl">🤖</span>
                   <div>
                     <h4 className="text-xs font-bold text-white uppercase">Unlimited AI Sandbox</h4>
                     <span className="text-[10px] text-brand-slate">Real-time compiler advice</span>
                   </div>
                 </div>
-                <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-2xl flex items-center space-x-3">
+                <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-[12px] flex items-center space-x-3">
                   <span className="text-xl">⚔️</span>
                   <div>
                     <h4 className="text-xs font-bold text-white uppercase">Daily Missions</h4>
                     <span className="text-[10px] text-brand-slate">Earn XP and solve bugs</span>
                   </div>
                 </div>
-                <div className="p-4 bg-brand-emerald/5 border border-brand-emerald/10 rounded-2xl flex items-center space-x-3">
+                <div className="p-4 bg-brand-emerald/5 border border-brand-emerald/10 rounded-[12px] flex items-center space-x-3">
                   <span className="text-xl">👥</span>
                   <div>
                     <h4 className="text-xs font-bold text-white uppercase">Recruiter Pipelines</h4>
@@ -185,18 +182,18 @@ export default function OnboardingPage() {
             exit={{ opacity: 0, x: -20 }}
             className="w-full max-w-lg"
           >
-            <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6 text-left">
+            <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6 text-left">
               <div className="flex items-center space-x-4">
-                <div className="h-12 w-12 rounded-2xl bg-brand-violet/20 border border-brand-violet flex items-center justify-center text-2xl">
+                <div className="h-12 w-12 rounded-[12px] bg-brand-violet/20 border border-brand-violet flex items-center justify-center text-2xl">
                   🤖
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-white text-base uppercase">AI Mentor</h3>
+                  <h3 className="font-sans font-bold text-white text-base uppercase">AI Mentor</h3>
                   <span className="text-[10px] text-brand-emerald font-sans uppercase font-semibold">Online & Analyzing</span>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-brand-card/50 border border-brand-border/60 text-xs text-brand-slate leading-relaxed">
+              <div className="p-4 rounded-[12px] bg-brand-bg-sec border border-brand-border text-xs text-brand-slate leading-relaxed">
                 "Hello student! I am your interactive AI Mentor. I will guide you through our dynamic learning districts, scan your submitted sandbox codes, and flag security warnings. Before we construct your workspace, I need to collect your Developer DNA to customize the journey."
               </div>
 
@@ -216,12 +213,12 @@ export default function OnboardingPage() {
             exit={{ opacity: 0, x: -20 }}
             className="w-full max-w-3xl text-left"
           >
-            <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
+            <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6">
               <div className="space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-brand-violet font-bold">
+                <span className="text-[10px] font-sans uppercase tracking-widest text-brand-violet font-bold">
                   Step 1 of 2: AI Assessment
                 </span>
-                <h3 className="text-xl font-display font-bold text-white uppercase tracking-tight">
+                <h3 className="text-xl font-sans font-bold text-white uppercase tracking-tight">
                   🎯 What is your dream career goal?
                 </h3>
                 <p className="text-xs text-brand-slate leading-relaxed font-sans">
@@ -239,9 +236,9 @@ export default function OnboardingPage() {
                         setCareerGoal(goal.id);
                         setCareerGoalText('');
                       }}
-                      className={`p-4 rounded-2xl border text-left transition-all relative overflow-hidden flex flex-col justify-between min-h-[90px] cursor-pointer ${
+                      className={`p-4 rounded-[12px] border text-left transition-all relative overflow-hidden flex flex-col justify-between min-h-[90px] cursor-pointer ${
                         isSelected
-                          ? 'border-brand-violet bg-brand-violet/10 text-white shadow-lg'
+                          ? 'border-brand-violet bg-brand-violet/10 text-white'
                           : 'border-brand-border bg-brand-card text-brand-slate hover:border-brand-border/60 hover:bg-brand-card/85'
                       }`}
                     >
@@ -264,9 +261,9 @@ export default function OnboardingPage() {
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-4 bg-brand-card/50 border border-brand-border rounded-2xl space-y-2 mt-4"
+                      className="p-4 bg-brand-bg-sec border border-brand-border rounded-[12px] space-y-2 mt-4"
                     >
-                      <label className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold block">
+                      <label className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold block">
                         {currentGoalObj.inputLabel} {currentGoalObj.required && <span className="text-red-500">*</span>}
                       </label>
                       <Input
@@ -314,12 +311,12 @@ export default function OnboardingPage() {
             exit={{ opacity: 0, x: -20 }}
             className="w-full max-w-2xl text-left"
           >
-            <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
+            <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6">
               <div className="space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-brand-emerald font-bold">
+                <span className="text-[10px] font-sans uppercase tracking-widest text-brand-emerald font-bold">
                   Step 2 of 2: AI Assessment
                 </span>
-                <h3 className="text-xl font-display font-bold text-white uppercase tracking-tight">
+                <h3 className="text-xl font-sans font-bold text-white uppercase tracking-tight">
                   🧬 Developer DNA Assessment
                 </h3>
               </div>
@@ -328,7 +325,7 @@ export default function OnboardingPage() {
                 
                 {/* Languages selectors */}
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold">
+                  <label className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold">
                     Primary Languages
                   </label>
                   <div className="flex flex-wrap gap-1.5">
@@ -338,7 +335,7 @@ export default function OnboardingPage() {
                         <button
                           key={lang}
                           onClick={() => handleToggleLang(lang)}
-                          className={`px-3 py-1.5 rounded-xl text-xs transition-all font-semibold ${
+                          className={`px-3 py-1.5 rounded-[10px] text-xs transition-all font-semibold ${
                             isSelected ? 'bg-brand-violet text-white' : 'bg-brand-border text-brand-slate hover:bg-brand-border/80'
                           }`}
                         >
@@ -351,7 +348,7 @@ export default function OnboardingPage() {
 
                 {/* Frameworks selector */}
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold">
+                  <label className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold">
                     Preferred Frameworks
                   </label>
                   <div className="flex flex-wrap gap-1.5">
@@ -361,7 +358,7 @@ export default function OnboardingPage() {
                         <button
                           key={frame}
                           onClick={() => handleToggleFrame(frame)}
-                          className={`px-3 py-1.5 rounded-xl text-xs transition-all font-semibold ${
+                          className={`px-3 py-1.5 rounded-[10px] text-xs transition-all font-semibold ${
                             isSelected ? 'bg-brand-emerald text-brand-bg' : 'bg-brand-border text-brand-slate hover:bg-brand-border/80'
                           }`}
                         >
@@ -373,13 +370,13 @@ export default function OnboardingPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold">
+                  <label className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold">
                     Experience Level
                   </label>
                   <select
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-brand-card border border-brand-border rounded-xl text-foreground text-xs focus:outline-none focus:border-brand-violet"
+                    className="w-full px-4 py-2.5 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-xs focus:outline-none focus:border-brand-violet"
                   >
                     <option value="Beginner">Beginner (0-1 years)</option>
                     <option value="Intermediate">Intermediate (1-3 years)</option>
@@ -388,13 +385,13 @@ export default function OnboardingPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold">
+                  <label className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold">
                     Weekly Commitment
                   </label>
                   <select
                     value={weeklyHours}
                     onChange={(e) => setWeeklyHours(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-brand-card border border-brand-border rounded-xl text-foreground text-xs focus:outline-none focus:border-brand-violet"
+                    className="w-full px-4 py-2.5 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-xs focus:outline-none focus:border-brand-violet"
                   >
                     <option value="3">3 hours / week</option>
                     <option value="5">5 hours / week</option>
@@ -426,12 +423,12 @@ export default function OnboardingPage() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="w-full max-w-md text-center"
           >
-            <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
+            <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6">
               <div className="h-16 w-16 mx-auto rounded-full border-2 border-brand-violet border-t-transparent animate-spin" />
-              <h3 className="text-lg font-display font-bold text-white uppercase tracking-tight">
+              <h3 className="text-lg font-sans font-bold text-white uppercase tracking-tight">
                 AI Engines Processing
               </h3>
-              <p className="text-xs font-mono text-brand-slate animate-pulse">
+              <p className="text-xs font-sans text-brand-slate animate-pulse">
                 {tickerMsg}
               </p>
             </Card>
@@ -447,24 +444,24 @@ export default function OnboardingPage() {
             exit={{ opacity: 0 }}
             className="w-full max-w-3xl text-left"
           >
-            <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
-              <h3 className="text-xl font-display font-bold text-white uppercase tracking-tight">
+            <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6">
+              <h3 className="text-xl font-sans font-bold text-white uppercase tracking-tight">
                 🗺️ Tailored Roadmap Generated
               </h3>
 
               <div className="space-y-4">
-                <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-2xl">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-brand-violet block">Stage 1: Core Foundations</span>
+                <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-[16px]">
+                  <span className="text-[10px] font-sans uppercase tracking-widest text-brand-violet block">Stage 1: Core Foundations</span>
                   <h4 className="font-bold text-white text-sm mt-1">Establish route interceptors checks in {selectedLangs[0] || 'TypeScript'}</h4>
                   <p className="text-xs text-brand-slate mt-1">Configure authorization scopes, schema validations, and database constraints.</p>
                 </div>
-                <div className="p-4 bg-brand-card border border-brand-border rounded-2xl opacity-60">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-brand-slate block">Stage 2: High Scale System</span>
+                <div className="p-4 bg-brand-card border border-brand-border rounded-[16px] opacity-60">
+                  <span className="text-[10px] font-sans uppercase tracking-widest text-brand-slate block">Stage 2: High Scale System</span>
                   <h4 className="font-bold text-white text-sm mt-1">Concurrency, Deadlocks, & Caching</h4>
                   <p className="text-xs text-brand-slate mt-1">Design cache policies and optimize relational table triggers.</p>
                 </div>
-                <div className="p-4 bg-brand-card border border-brand-border rounded-2xl opacity-60">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-brand-slate block">Stage 3: Advanced Mock System</span>
+                <div className="p-4 bg-brand-card border border-brand-border rounded-[16px] opacity-60">
+                  <span className="text-[10px] font-sans uppercase tracking-widest text-brand-slate block">Stage 3: Advanced Mock System</span>
                   <h4 className="font-bold text-white text-sm mt-1">Architect systems for {careerGoalText || 'Tech Startups'} Guidelines</h4>
                   <p className="text-xs text-brand-slate mt-1">Construct message queues and token buckets algorithms.</p>
                 </div>
@@ -486,21 +483,21 @@ export default function OnboardingPage() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="w-full max-w-xl text-center"
           >
-            <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
+            <Card className="bg-brand-card border border-brand-border p-8 rounded-[20px] relative z-10 shadow-sm space-y-6">
               <span className="text-4xl">🔓</span>
-              <h3 className="text-2xl font-display font-bold text-white uppercase tracking-tight">
+              <h3 className="text-2xl font-sans font-bold text-white uppercase tracking-tight">
                 Academy Districts Unlocked
               </h3>
 
               <div className="space-y-3 py-2 text-left">
-                <div className="p-4 border border-brand-emerald bg-brand-emerald/5 rounded-2xl flex justify-between items-center">
+                <div className="p-4 border border-brand-emerald bg-brand-emerald/5 rounded-[16px] flex justify-between items-center">
                   <div>
                     <h4 className="text-xs font-bold text-white">District 1: Secure Code Sandbox</h4>
                     <span className="text-[10px] text-brand-slate">Active & Available</span>
                   </div>
                   <span className="text-xs font-bold text-brand-emerald">UNLOCKED</span>
                 </div>
-                <div className="p-4 border border-brand-border bg-brand-card/50 rounded-2xl opacity-45 flex justify-between items-center">
+                <div className="p-4 border border-brand-border bg-brand-card/50 rounded-[16px] opacity-45 flex justify-between items-center">
                   <div>
                     <h4 className="text-xs font-bold text-white">District 2: High Concurrency Laboratory</h4>
                     <span className="text-[10px] text-brand-slate">Locked Stage 2 Requirement</span>

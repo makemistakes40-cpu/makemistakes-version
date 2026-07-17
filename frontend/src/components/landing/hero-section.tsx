@@ -25,9 +25,9 @@ export function HeroSection() {
           <span>✨ Reimagining developer learning</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-display font-bold tracking-tight sm:tracking-tighter text-white leading-[1.1]">
+        <h1 className="text-4xl sm:text-6xl font-sans font-bold tracking-tight text-white leading-[1.1]">
           The best developers are built on{' '}
-          <span className="bg-gradient-to-r from-white via-brand-ink-muted to-brand-violet bg-clip-text text-transparent">Mistakes.</span>
+          <span className="bg-gradient-to-r from-white via-brand-slate to-brand-violet bg-clip-text text-transparent">Mistakes.</span>
         </h1>
 
         <p className="text-base sm:text-lg text-brand-slate max-w-2xl mx-auto leading-relaxed font-sans">
@@ -50,7 +50,6 @@ export function HeroSection() {
 
       {/* Dynamic Coding Sandbox Simulator */}
       <div className="w-full max-w-4xl mt-16 relative z-10 px-2">
-        <div className="absolute inset-0 bg-brand-violet/10 rounded-3xl filter blur-2xl transform scale-95 pointer-events-none" />
         <AnimatedCodePanel />
       </div>
 

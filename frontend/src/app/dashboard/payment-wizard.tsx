@@ -181,9 +181,8 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
         initial={{ opacity: 0, scale: 0.95, y: 15 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-brand-card/95 border border-brand-border p-8 rounded-3xl w-full max-w-md z-10 relative overflow-hidden"
+        className="bg-brand-card border border-brand-border p-8 rounded-[20px] w-full max-w-md z-10 relative overflow-hidden"
       >
-        <div className="absolute top-1/2 left-1/2 w-48 h-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-violet/10 blur-[80px] pointer-events-none" />
 
         <AnimatePresence mode="wait">
           {/* STEP 1: ORDER SUMMARY */}
@@ -196,7 +195,7 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
               className="space-y-6"
             >
               <div className="text-center">
-                <h3 className="font-display font-black text-xl text-white">Order Summary</h3>
+                <h3 className="font-sans font-bold text-xl text-white">Order Summary</h3>
                 <p className="text-xs text-brand-slate">Review your details before payment</p>
               </div>
 
@@ -255,14 +254,14 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
               className="space-y-6"
             >
               <div className="text-center space-y-1">
-                <div className="flex justify-between items-center bg-brand-violet/10 border border-brand-violet/25 px-3 py-1.5 rounded-xl">
-                  <span className="text-[10px] text-white uppercase font-mono tracking-wider font-bold">UPI QR Payment</span>
+                <div className="flex justify-between items-center bg-brand-violet/10 border border-brand-violet/25 px-3 py-1.5 rounded-[12px]">
+                  <span className="text-[10px] text-white uppercase font-sans tracking-wider font-bold">UPI QR Payment</span>
                   <span className="text-xs font-mono font-bold text-brand-violet animate-pulse">{formatTimer(timeLeft)}</span>
                 </div>
               </div>
 
               {/* QR Code Graphic layout */}
-              <div className="flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-brand-border/20 shadow-xl relative group">
+              <div className="flex flex-col items-center justify-center p-6 bg-white rounded-[16px] border border-brand-border/20 shadow-sm relative group">
                 {/* Simulated stylized premium QR code */}
                 <svg className="w-40 h-40 text-brand-bg" viewBox="0 0 100 100" fill="currentColor">
                   {/* Square corner indicators */}
@@ -290,14 +289,14 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
                   <rect x="35" y="80" width="6" height="8" rx="1" fill="currentColor" />
                   <rect x="60" y="80" width="8" height="6" rx="1" fill="currentColor" />
                 </svg>
-                <span className="text-[8px] uppercase tracking-wider font-mono text-brand-slate mt-3 font-semibold">
+                <span className="text-[8px] uppercase tracking-wider font-sans text-brand-slate mt-3 font-semibold">
                   Scan to Pay: ${order.total.toFixed(2)} (incl. GST)
                 </span>
               </div>
 
               {/* UPI and Merchant metadata */}
               <div className="space-y-3">
-                <div className="flex justify-between items-center text-xs bg-brand-card border border-brand-border/40 p-3 rounded-xl">
+                <div className="flex justify-between items-center text-xs bg-brand-card border border-brand-border/45 p-3 rounded-[12px]">
                   <div>
                     <span className="text-[10px] text-brand-slate block">UPI ID</span>
                     <span className="text-white font-mono font-bold">makemistakes@ybl</span>
@@ -342,7 +341,7 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
                     type="file"
                     accept="image/png, image/jpeg"
                     onChange={handleScreenshotChange}
-                    className="w-full text-xs text-brand-slate file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-violet/20 file:text-brand-violet hover:file:bg-brand-violet/30 file:cursor-pointer"
+                    className="w-full text-xs text-brand-slate file:mr-3 file:py-2 file:px-4 file:rounded-[10px] file:border-0 file:text-xs file:font-semibold file:bg-brand-violet/20 file:text-brand-violet hover:file:bg-brand-violet/30 file:cursor-pointer"
                   />
                 </div>
 
@@ -377,13 +376,13 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-white font-display font-bold text-lg">Under Verification</h4>
+                <h4 className="text-white font-sans font-bold text-lg">Under Verification</h4>
                 <p className="text-xs text-brand-slate max-w-xs mx-auto leading-relaxed">
                   Your payment verification log has been submitted. Our administrators are auditing the UTR ID matches.
                 </p>
               </div>
 
-              <div className="p-3.5 bg-brand-card/80 border border-brand-border/40 rounded-xl space-y-1.5">
+              <div className="p-3.5 bg-brand-card/80 border border-brand-border/40 rounded-[12px] space-y-1.5">
                 <span className="text-[10px] text-brand-slate uppercase font-mono tracking-widest block">
                   Status: Pending Audit
                 </span>
@@ -418,7 +417,7 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-white font-display font-black text-xl">Subscription Activated!</h4>
+                <h4 className="text-white font-sans font-black text-xl">Subscription Activated!</h4>
                 <p className="text-xs text-brand-slate max-w-xs mx-auto leading-relaxed">
                   Congratulations! Your transaction has been approved. You are now a **Pro Member** with full platform access.
                 </p>
@@ -452,18 +451,18 @@ export function PaymentWizard({ planId, onClose, onSuccess }: PaymentWizardProps
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-white font-display font-bold text-lg">Transaction Rejected</h4>
+                <h4 className="text-white font-sans font-bold text-lg">Transaction Rejected</h4>
                 <p className="text-xs text-brand-slate max-w-xs mx-auto leading-relaxed">
                   The verification claim was audited and could not be verified by admin.
                 </p>
               </div>
 
               {rejectionReason && (
-                <div className="p-4 bg-red-500/5 border border-red-500/25 rounded-2xl text-left">
+                <div className="p-4 bg-red-500/5 border border-red-500/25 rounded-[12px] text-left">
                   <span className="text-[9px] uppercase font-mono font-bold text-red-400 block tracking-widest mb-1">
                     Auditor Review Reason:
                   </span>
-                  <p className="text-xs text-brand-slate font-display leading-relaxed">
+                  <p className="text-xs text-brand-slate font-sans leading-relaxed">
                     {rejectionReason}
                   </p>
                 </div>

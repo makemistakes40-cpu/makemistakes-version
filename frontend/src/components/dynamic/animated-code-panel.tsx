@@ -58,7 +58,7 @@ export function AnimatedCodePanel() {
   const current = CODE_STEPS[step];
 
   return (
-    <div className="glass-panel rounded-2xl border border-brand-border overflow-hidden shadow-2xl">
+    <div className="glass-panel rounded-[16px] border border-brand-border overflow-hidden shadow-sm">
       
       {/* Editor Header Bar */}
       <div className="bg-brand-card px-4 py-3 border-b border-brand-border flex items-center justify-between">
@@ -75,7 +75,7 @@ export function AnimatedCodePanel() {
       <div className="grid grid-cols-1 md:grid-cols-3 min-h-[300px]">
         
         {/* Code Content */}
-        <div className="col-span-2 p-6 font-mono text-sm bg-[#0a0c16] overflow-x-auto border-r border-brand-border flex flex-col justify-between">
+        <div className="col-span-2 p-6 font-mono text-sm bg-brand-bg-sec overflow-x-auto border-r border-brand-border flex flex-col justify-between">
           <AnimatePresence mode="wait">
             <motion.pre
               key={step}
@@ -119,19 +119,19 @@ export function AnimatedCodePanel() {
         </div>
 
         {/* AI Diagnostics Box */}
-        <div className="col-span-1 p-6 bg-[#0c0e1b]/80 flex flex-col justify-between">
+        <div className="col-span-1 p-6 bg-brand-card flex flex-col justify-between">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <span className={`h-2.5 w-2.5 rounded-full animate-pulse ${
                 current.status === 'error' ? 'bg-red-500' :
                 current.status === 'fixing' ? 'bg-yellow-500' : 'bg-green-500'
               }`} />
-              <h4 className="text-xs uppercase font-display font-semibold tracking-wider text-brand-slate">
+              <h4 className="text-xs uppercase font-sans font-semibold tracking-wider text-brand-slate">
                 Diagnostics Panel
               </h4>
             </div>
 
-            <h3 className="font-display font-bold text-base text-white">
+            <h3 className="font-sans font-bold text-base text-white">
               {current.title}
             </h3>
 
@@ -156,7 +156,7 @@ export function AnimatedCodePanel() {
           <div className="pt-4 border-t border-brand-border/45 text-center">
             <button
               onClick={() => setStep((step + 1) % CODE_STEPS.length)}
-              className="text-xs font-display font-medium text-brand-violet hover:text-white transition-colors"
+              className="text-xs font-sans font-medium text-brand-violet hover:text-white transition-colors"
             >
               Trigger Next Stage →
             </button>

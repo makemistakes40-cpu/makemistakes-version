@@ -270,7 +270,7 @@ export default function AdminDashboardPage() {
         
         {/* Sidebar Navigation */}
         <div className="lg:col-span-1 space-y-2">
-          <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-2xl mb-6">
+          <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-[12px] mb-6">
             <span className="text-[10px] uppercase font-mono tracking-widest text-brand-violet font-bold block mb-1">
               Auditor Session
             </span>
@@ -284,7 +284,7 @@ export default function AdminDashboardPage() {
 
           <button
             onClick={() => setActiveTab('overview')}
-            className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold transition-all duration-200 ${
+            className={`w-full text-left px-4 py-3 rounded-[10px] text-xs font-semibold transition-all duration-200 ${
               activeTab === 'overview' ? 'bg-brand-violet text-white' : 'hover:bg-brand-card/45 text-brand-slate'
             }`}
           >
@@ -292,7 +292,7 @@ export default function AdminDashboardPage() {
           </button>
           <button
             onClick={() => setActiveTab('users')}
-            className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold transition-all duration-200 ${
+            className={`w-full text-left px-4 py-3 rounded-[10px] text-xs font-semibold transition-all duration-200 ${
               activeTab === 'users' ? 'bg-brand-violet text-white' : 'hover:bg-brand-card/45 text-brand-slate'
             }`}
           >
@@ -300,7 +300,7 @@ export default function AdminDashboardPage() {
           </button>
           <button
             onClick={() => setActiveTab('payments')}
-            className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold transition-all duration-200 ${
+            className={`w-full text-left px-4 py-3 rounded-[10px] text-xs font-semibold transition-all duration-200 ${
               activeTab === 'payments' ? 'bg-brand-violet text-white' : 'hover:bg-brand-card/45 text-brand-slate'
             }`}
           >
@@ -308,7 +308,7 @@ export default function AdminDashboardPage() {
           </button>
           <button
             onClick={() => setActiveTab('courses')}
-            className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold transition-all duration-200 ${
+            className={`w-full text-left px-4 py-3 rounded-[10px] text-xs font-semibold transition-all duration-200 ${
               activeTab === 'courses' ? 'bg-brand-violet text-white' : 'hover:bg-brand-card/45 text-brand-slate'
             }`}
           >
@@ -316,7 +316,7 @@ export default function AdminDashboardPage() {
           </button>
           <button
             onClick={() => setActiveTab('audit')}
-            className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold transition-all duration-200 ${
+            className={`w-full text-left px-4 py-3 rounded-[10px] text-xs font-semibold transition-all duration-200 ${
               activeTab === 'audit' ? 'bg-brand-violet text-white' : 'hover:bg-brand-card/45 text-brand-slate'
             }`}
           >
@@ -344,30 +344,30 @@ export default function AdminDashboardPage() {
                   exit={{ opacity: 0 }}
                   className="space-y-6"
                 >
-                  <h3 className="text-xl font-display font-bold tracking-tight text-white">Platform Statistics Overview</h3>
+                  <h3 className="text-xl font-sans font-bold tracking-tight text-white">Platform Statistics Overview</h3>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
+                    <Card className="bg-brand-card p-5 border border-brand-border text-left">
                       <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">DAU (24h)</span>
-                      <span className="text-2xl font-display font-bold tracking-tight text-white block mt-1">{analytics.dau}</span>
+                      <span className="text-2xl font-sans font-bold tracking-tight text-white block mt-1">{analytics.dau}</span>
                     </Card>
-                    <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
+                    <Card className="bg-brand-card p-5 border border-brand-border text-left">
                       <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">Registrations</span>
-                      <span className="text-2xl font-display font-bold tracking-tight text-white block mt-1">{analytics.registrations}</span>
+                      <span className="text-2xl font-sans font-bold tracking-tight text-white block mt-1">{analytics.registrations}</span>
                     </Card>
-                    <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
+                    <Card className="bg-brand-card p-5 border border-brand-border text-left">
                       <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">Active Subscriptions</span>
-                      <span className="text-2xl font-display font-bold tracking-tight text-white block mt-1">{analytics.subscriptions}</span>
+                      <span className="text-2xl font-sans font-bold tracking-tight text-white block mt-1">{analytics.subscriptions}</span>
                     </Card>
-                    <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
+                    <Card className="bg-brand-card p-5 border border-brand-border text-left">
                       <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">Revenue Sum</span>
-                      <span className="text-2xl font-display font-bold tracking-tight text-brand-emerald block mt-1">${analytics.revenue.toFixed(2)}</span>
+                      <span className="text-2xl font-sans font-bold tracking-tight text-brand-emerald block mt-1">${analytics.revenue.toFixed(2)}</span>
                     </Card>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Card className="bg-brand-card/75 border border-brand-border p-6 space-y-3 text-left">
-                      <h4 className="text-xs font-display font-bold text-white uppercase tracking-wider">AI Platform Usage</h4>
+                    <Card className="bg-brand-card border border-brand-border p-6 space-y-3 text-left">
+                      <h4 className="text-xs font-sans font-bold text-white uppercase tracking-wider">AI Platform Usage</h4>
                       <div className="flex justify-between text-xs pt-2">
                         <span className="text-brand-slate">Mentor Prompt Queries</span>
                         <span className="text-white font-mono font-bold">{analytics.aiMentorPromptsCount}</span>
@@ -378,8 +378,8 @@ export default function AdminDashboardPage() {
                       </div>
                     </Card>
 
-                    <Card className="bg-brand-card/75 border border-brand-border p-6 space-y-3 text-left">
-                      <h4 className="text-xs font-display font-bold text-white uppercase tracking-wider">Academics Completion</h4>
+                    <Card className="bg-brand-card border border-brand-border p-6 space-y-3 text-left">
+                      <h4 className="text-xs font-sans font-bold text-white uppercase tracking-wider">Academics Completion</h4>
                       <div className="flex justify-between text-xs pt-2">
                         <span className="text-brand-slate">Course Completion Rate</span>
                         <span className="text-white font-mono font-bold">{analytics.courseCompletionRate}%</span>
@@ -403,7 +403,7 @@ export default function AdminDashboardPage() {
                   className="space-y-6"
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-xl font-display font-bold tracking-tight text-white">Platform Users Directory</h3>
+                    <h3 className="text-xl font-sans font-bold tracking-tight text-white">Platform Users Directory</h3>
                     <Input
                       placeholder="Search accounts..."
                       value={userSearch}
@@ -415,7 +415,7 @@ export default function AdminDashboardPage() {
                     />
                   </div>
 
-                  <div className="bg-brand-card/75 border border-brand-border rounded-2xl overflow-hidden">
+                  <div className="bg-brand-card border border-brand-border rounded-[16px] overflow-hidden">
                     <table className="w-full text-left text-xs border-collapse">
                       <thead>
                         <tr className="bg-brand-card border-b border-brand-border text-brand-slate uppercase font-mono text-[9px] tracking-wider">
@@ -441,7 +441,7 @@ export default function AdminDashboardPage() {
                                 <select
                                   value={u.systemRole?.name || 'STUDENT'}
                                   onChange={(e) => handleRoleChange(u.id, e.target.value)}
-                                  className="bg-brand-card border border-brand-border text-xs rounded px-2 py-1 text-white focus:outline-none"
+                                  className="bg-brand-bg-sec border border-brand-border text-xs rounded px-2 py-1 text-white focus:outline-none"
                                 >
                                   <option value="SUPER_ADMIN">Super Admin</option>
                                   <option value="ADMIN">Admin</option>
@@ -526,7 +526,7 @@ export default function AdminDashboardPage() {
                 </motion.div>
               )}
 
-              {/* TAB 4: COURSE LIFECYCLE */}
+               {/* TAB 4: COURSE LIFECYCLE */}
               {activeTab === 'courses' && (
                 <motion.div
                   key="courses"
@@ -536,7 +536,7 @@ export default function AdminDashboardPage() {
                   className="space-y-6"
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-xl font-display font-bold tracking-tight text-white">Course Catalog overrides</h3>
+                    <h3 className="text-xl font-sans font-bold tracking-tight text-white">Course Catalog overrides</h3>
                     <Button
                       variant="primary"
                       onClick={() => {
@@ -556,7 +556,7 @@ export default function AdminDashboardPage() {
                     {courses.map((course) => (
                       <Card
                         key={course.id}
-                        className="bg-brand-card/85 p-6 border border-brand-border text-left space-y-4 relative flex flex-col justify-between"
+                        className="bg-brand-card p-6 border border-brand-border text-left space-y-4 relative flex flex-col justify-between"
                       >
                         <div className="space-y-2">
                           <div className="flex justify-between items-center">
@@ -568,7 +568,7 @@ export default function AdminDashboardPage() {
                               {course.status}
                             </span>
                           </div>
-                          <h4 className="font-display font-bold text-sm text-white">
+                          <h4 className="font-sans font-bold text-sm text-white">
                             {course.title}
                           </h4>
                           <p className="text-xs text-brand-slate leading-relaxed">
@@ -615,9 +615,9 @@ export default function AdminDashboardPage() {
                   exit={{ opacity: 0 }}
                   className="space-y-6"
                 >
-                  <h3 className="text-xl font-display font-bold tracking-tight text-white">Administrative Activity logs</h3>
+                  <h3 className="text-xl font-sans font-bold tracking-tight text-white">Platform Activity logs</h3>
 
-                  <div className="bg-brand-card/75 border border-brand-border rounded-2xl p-6 relative">
+                  <div className="bg-brand-card border border-brand-border rounded-[16px] p-6 relative">
                     <div className="absolute left-[33px] top-10 bottom-10 w-0.5 bg-brand-border/45" />
 
                     <div className="space-y-6">
@@ -628,7 +628,7 @@ export default function AdminDashboardPage() {
                           </div>
                           <div className="space-y-1">
                             <div className="flex items-center space-x-3">
-                              <span className="text-xs font-display font-bold text-white uppercase tracking-wide">
+                              <span className="text-xs font-sans font-bold text-white uppercase tracking-wide">
                                 {log.action}
                               </span>
                               <span className="text-[10px] text-brand-slate font-mono">
@@ -663,9 +663,9 @@ export default function AdminDashboardPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-brand-card border border-brand-border p-6 rounded-3xl z-10 max-w-sm w-full relative"
+              className="bg-brand-card border border-brand-border p-6 rounded-[20px] z-10 max-w-sm w-full relative"
             >
-              <h4 className="font-display font-bold text-white text-sm mb-4">Reset Student Password</h4>
+              <h4 className="font-sans font-bold text-white text-sm mb-4">Reset Student Password</h4>
               <form onSubmit={handleResetPasswordSubmit} className="space-y-4">
                 <Input
                   type="password"
@@ -697,9 +697,9 @@ export default function AdminDashboardPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-brand-card border border-brand-border p-6 rounded-3xl z-10 max-w-md w-full relative"
+              className="bg-brand-card border border-brand-border p-6 rounded-[20px] z-10 max-w-md w-full relative"
             >
-              <h4 className="font-display font-bold text-white text-sm mb-4">
+              <h4 className="font-sans font-bold text-white text-sm mb-4">
                 {editingCourse ? 'Edit Course Node' : 'Create Course Catalog Node'}
               </h4>
               <form onSubmit={handleSaveCourse} className="space-y-4 text-left">
@@ -724,7 +724,7 @@ export default function AdminDashboardPage() {
                     value={courseDesc}
                     onChange={(e) => setCourseDesc(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-xs focus:outline-none focus:border-brand-violet min-h-[80px]"
+                    className="w-full px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-xs focus:outline-none focus:border-brand-violet min-h-[80px]"
                   />
                 </div>
 
@@ -735,7 +735,7 @@ export default function AdminDashboardPage() {
                   <select
                     value={courseStatus}
                     onChange={(e) => setCourseStatus(e.target.value)}
-                    className="w-full px-4 py-3 bg-brand-card border border-brand-border rounded-xl text-foreground text-xs focus:outline-none focus:border-brand-violet"
+                    className="w-full px-4 py-3 bg-brand-bg-sec border border-brand-border rounded-[12px] text-foreground text-xs focus:outline-none focus:border-brand-violet"
                   >
                     <option value="DRAFT">Draft</option>
                     <option value="PUBLISHED">Published</option>

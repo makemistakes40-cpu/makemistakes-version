@@ -46,7 +46,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-brand-bg px-4 relative">
-      <div className="absolute top-1/2 left-1/2 w-[35rem] h-[35rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-violet/5 blur-[120px] pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -55,17 +54,17 @@ export default function LoginPage() {
         className="w-full max-w-md z-10"
       >
         <div className="text-center mb-8">
-          <Link href="/" className="font-display font-bold text-3xl tracking-tight text-white inline-block mb-3">
+          <Link href="/" className="font-sans font-bold text-3xl tracking-tight text-white inline-block mb-3">
             Make<span className="text-brand-violet">Mistakes</span>
           </Link>
           <p className="text-sm text-brand-slate font-sans">Sign in to your learning dashboard</p>
         </div>
 
-        <Card glow className="bg-brand-card/85 p-8 border border-brand-border">
+        <Card className="bg-brand-card p-8 border border-brand-border">
           <form onSubmit={handleSubmit} className="space-y-6">
             
             {serverError && (
-              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-red-400 font-sans font-semibold text-center">
+              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-[12px] text-xs text-red-400 font-sans font-semibold text-center">
                 {serverError}
               </div>
             )}

@@ -61,7 +61,7 @@ export function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-display font-bold text-xl tracking-tight text-white flex items-center">
+          <span className="font-sans font-bold text-xl tracking-tight text-white flex items-center">
             Make<span className="text-brand-violet">Mistakes</span>
             <span className="ml-1.5 px-2 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-brand-violet/10 border border-brand-violet/30 text-brand-violet rounded-full">
               Beta
@@ -81,7 +81,7 @@ export function Navbar() {
                       Welcome, <strong className="text-white">{user.firstName}</strong>
                     </span>
                     {user.subscriptionTier === 'PRO' && (
-                      <span className="text-[8px] bg-brand-violet/20 border border-brand-violet text-brand-violet font-mono font-bold tracking-widest px-2 py-0.5 rounded-full uppercase animate-pulse shadow-[0_0_10px_rgba(139,92,246,0.15)]">
+                      <span className="text-[8px] bg-brand-violet/10 border border-brand-violet/30 text-brand-violet font-sans font-bold tracking-widest px-2 py-0.5 rounded-full uppercase">
                         PRO
                       </span>
                     )}
@@ -122,10 +122,10 @@ export function Navbar() {
                             initial={{ opacity: 0, y: 10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                            className="absolute right-0 mt-3 w-80 bg-brand-card border border-brand-border rounded-2xl shadow-xl z-50 overflow-hidden"
+                            className="absolute right-0 mt-3 w-80 bg-brand-card border border-brand-border rounded-[16px] shadow-sm z-50 overflow-hidden"
                           >
-                            <div className="p-3.5 border-b border-brand-border/65 flex justify-between items-center">
-                              <span className="text-xs font-display font-bold text-white uppercase tracking-wider">
+                            <div className="p-3.5 border-b border-brand-divider flex justify-between items-center">
+                              <span className="text-xs font-sans font-bold text-white uppercase tracking-wider">
                                 Notifications
                               </span>
                               {unreadCount > 0 && (
@@ -150,7 +150,7 @@ export function Navbar() {
                                     }`}
                                   >
                                     <div className="flex justify-between items-start">
-                                      <h5 className={`text-[11px] font-display font-semibold ${
+                                      <h5 className={`text-[11px] font-sans font-semibold ${
                                         n.read ? 'text-white/60' : 'text-white'
                                       }`}>
                                         {n.title}

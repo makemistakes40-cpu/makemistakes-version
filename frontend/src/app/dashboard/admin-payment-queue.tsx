@@ -145,7 +145,7 @@ export function AdminPaymentQueue() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <div className="space-y-0.5">
-          <h3 className="text-xl font-display font-black text-white">
+          <h3 className="text-xl font-sans font-bold text-white">
             🛡️ Admin Subscription Verification Queue
           </h3>
           <p className="text-xs text-brand-slate">
@@ -183,7 +183,7 @@ export function AdminPaymentQueue() {
                 <div className="space-y-4 flex-grow">
                   {/* User & Order Metadata */}
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="text-xs font-display font-bold text-white bg-brand-violet/20 border border-brand-violet/30 px-3 py-1 rounded-full">
+                    <span className="text-xs font-sans font-bold text-white bg-brand-violet/20 border border-brand-violet/30 px-3 py-1 rounded-full">
                       🧑‍🎓 {item.user.firstName} {item.user.lastName}
                     </span>
                     <span className="text-[10px] text-brand-slate font-mono uppercase tracking-wider">
@@ -314,15 +314,15 @@ export function AdminPaymentQueue() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-brand-card border border-brand-border p-6 rounded-3xl z-10 max-w-xl w-full text-center relative"
+              className="bg-brand-card border border-brand-border p-6 rounded-[20px] z-10 max-w-xl w-full text-center relative"
             >
               <div className="flex justify-between items-center pb-3 border-b border-brand-border mb-4">
-                <span className="text-xs font-display font-semibold text-white">Payment Screenshot Proof</span>
+                <span className="text-xs font-sans font-semibold text-white">Payment Screenshot Proof</span>
                 <button onClick={() => setViewingScreenshotUrl(null)} className="text-brand-slate hover:text-white text-sm">
                   ✕ Close
                 </button>
               </div>
-              <div className="flex items-center justify-center bg-black/35 rounded-2xl p-4 max-h-[400px] overflow-auto">
+              <div className="flex items-center justify-center bg-black/35 rounded-[16px] p-4 max-h-[400px] overflow-auto">
                 <img
                   src={viewingScreenshotUrl}
                   alt="Payment Receipt UTR"
