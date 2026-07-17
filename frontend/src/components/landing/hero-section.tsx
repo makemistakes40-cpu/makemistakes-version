@@ -22,7 +22,7 @@ export function HeroSection() {
         className="space-y-6 max-w-3xl"
       >
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-violet/10 border border-brand-violet/20 text-xs font-sans font-semibold text-brand-violet">
-          <span>✨ Reimagining developer learning</span>
+          <span>✨ Reimagining developer learning (Linear V2)</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-sans font-bold tracking-tight text-white leading-[1.1]">
