@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #090b11;
+  --color-brand-card: #111422;
+  --color-brand-card-light: #181d2f;
+  --color-brand-border: #1f2538;
+  --color-brand-violet: #8b5cf6;
+  --color-brand-violet-hover: #7c3aed;
+  --color-brand-emerald: #10b981;
+  --color-brand-emerald-hover: #059669;
+  --color-brand-slate: #94a3b8;
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-outfit), sans-serif;
+}
+
+:root {
+  --background: #090b11;
+  --foreground: #f8fafc;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(17, 20, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-glow {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+}
+
+/* Custom Gradients */
+.gradient-text {
+  background: linear-gradient(135deg, #f8fafc 30%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #8b5cf6 0%, #10b981 100%);
+}
+
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.glow-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.glow-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}

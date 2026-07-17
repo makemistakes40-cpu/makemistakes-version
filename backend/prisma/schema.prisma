@@ -1,0 +1,310 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  STUDENT
+  RECRUITER
+  ADMIN
+}
+
+model User {
+  id           String         @id @default(uuid())
+  email        String         @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  role            Role           @default(STUDENT)
+  subscriptionTier String         @default("FREE")
+  createdAt       DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  
+  failedLoginAttempts   Int                    @default(0)
+  lockoutUntil          DateTime?
+  twoFactorSecret       String?
+  twoFactorEnabled      Boolean                @default(false)
+  roleId                String?
+  systemRole            SystemRole?            @relation(fields: [roleId], references: [id])
+  hasCompletedProOnboarding Boolean            @default(false)
+  xpPoints              Int                    @default(0)
+  refreshTokens RefreshToken[]
+  sessions      Session[]
+  auditLogs     AuditLog[]
+  studentProfile StudentProfile?
+  personalRoadmap PersonalRoadmap?
+  subscription Subscription?
+  payments Payment[]
+  reviewedVerifications PaymentVerification[]
+  invoices Invoice[]
+  subscriptionHistories SubscriptionHistory[]
+  notifications Notification[]
+  missions      UserMission[]
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  isRevoked Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ipAddress String?
+  userAgent String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  details   Json?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+}
+
+model ErrorLog {
+  id        String   @id @default(uuid())
+  message   String
+  stack     String?
+  code      String?
+  path      String?
+  method    String?
+  userId    String?
+  ipAddress String?
+  createdAt DateTime @default(now())
+}
+
+model StudentProfile {
+  id                String   @id @default(uuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college           String
+  degree            String
+  branch            String
+  currentYear       String
+  programmingLevel  String
+  interestedCareer  String
+  preferredLanguage String
+  githubUrl         String?
+  linkedinUrl       String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model PersonalRoadmap {
+  id            String   @id @default(uuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skills        String
+  goals         String
+  experience    String
+  languages     String
+  dreamCompany  String
+  careerGoalText String   @default("")
+  timeAvailable String
+  steps         Json
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  VERIFIED
+  REJECTED
+  EXPIRED
+  REFUNDED
+}
+
+model SubscriptionPlan {
+  id            String         @id @default(uuid())
+  name          String
+  price         Float
+  gst           Float
+  total         Float
+  billingPeriod String         // "MONTHLY", "YEARLY"
+  features      Json
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  id        String           @id @default(uuid())
+  userId    String           @unique
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planId    String
+  plan      SubscriptionPlan @relation(fields: [planId], references: [id])
+  status    String           @default("ACTIVE") // "ACTIVE", "EXPIRED", "CANCELLED"
+  startsAt  DateTime         @default(now())
+  expiresAt DateTime
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+}
+
+model Payment {
+  id           String               @id @default(uuid()) // Order number
+  userId       String
+  user         User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount       Float
+  gst          Float
+  total        Float
+  status       PaymentStatus        @default(PENDING)
+  expiresAt    DateTime
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+  verification PaymentVerification?
+  invoice      Invoice?
+  timeline     PaymentTimeline[]
+}
+
+model PaymentVerification {
+  id              String    @id @default(uuid())
+  paymentId       String    @unique
+  payment         Payment   @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  utrNumber       String    @unique
+  screenshotUrl   String?
+  rejectionReason String?
+  reviewerId      String?
+  reviewer        User?     @relation(fields: [reviewerId], references: [id])
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Invoice {
+  id            String   @id @default(uuid())
+  invoiceNumber String   @unique
+  paymentId     String   @unique
+  payment       Payment  @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planName      String
+  amount        Float
+  gst           Float
+  total         Float
+  paymentDate   DateTime
+  expiryDate    DateTime
+  createdAt     DateTime @default(now())
+}
+
+model PaymentTimeline {
+  id          String   @id @default(uuid())
+  paymentId   String
+  payment     Payment  @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  status      String
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+}
+
+model SubscriptionHistory {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planId    String
+  status    String
+  startsAt  DateTime
+  expiresAt DateTime
+  action    String   // "ACTIVATE", "RENEW", "EXPIRE", "CANCEL"
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  type      String   // "INFO", "SUCCESS", "WARNING", "ALERT"
+  createdAt DateTime @default(now())
+}
+
+model SystemRole {
+  id          String                 @id @default(uuid())
+  name        String                 @unique // e.g. "SUPER_ADMIN", "ADMIN", "MENTOR", "RECRUITER", "STUDENT"
+  users       User[]
+  permissions SystemRolePermission[]
+  createdAt   DateTime               @default(now())
+  updatedAt   DateTime               @updatedAt
+
+  @@map("roles")
+}
+
+model SystemPermission {
+  id        String                 @id @default(uuid())
+  name      String                 @unique // e.g. "MANAGE_USERS", "MANAGE_PAYMENTS"
+  roles     SystemRolePermission[]
+  createdAt DateTime               @default(now())
+  updatedAt DateTime               @updatedAt
+
+  @@map("permissions")
+}
+
+model SystemRolePermission {
+  id           String           @id @default(uuid())
+  roleId       String
+  role         SystemRole       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permissionId String
+  permission   SystemPermission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@unique([roleId, permissionId])
+  @@map("role_permissions")
+}
+
+model Course {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  status      String   @default("DRAFT") // "DRAFT", "PUBLISHED", "ARCHIVED"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("courses")
+}
+
+model UserMission {
+  id            String   @id @default(uuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title         String
+  description   String
+  difficulty    String   // "EASY", "MEDIUM", "HARD"
+  xpReward      Int
+  estimatedTime String
+  skills        String[]
+  status        String   @default("ASSIGNED") // "ASSIGNED", "COMPLETED"
+  currentStep   String   @default("BRIEF") // "BRIEF", "CONCEPT", "EXAMPLES", "QUIZ", "PLAYGROUND", "COMPLETE"
+  codeContent   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("user_missions")
+}
+
+model Waitlist {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  createdAt DateTime @default(now())
+
+  @@map("waitlist")
+}
