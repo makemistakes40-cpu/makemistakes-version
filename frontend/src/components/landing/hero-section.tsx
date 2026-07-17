@@ -25,7 +25,7 @@ export function HeroSection() {
           <span>✨ Reimagining developer learning</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-sans font-bold tracking-tight text-white leading-[1.1]">
+        <h1 className="text-4xl sm:text-6xl font-display font-bold tracking-tight text-white leading-[1.1]">
           The best developers are built on{' '}
           <span className="bg-gradient-to-r from-white via-brand-slate to-brand-violet bg-clip-text text-transparent">Mistakes.</span>
         </h1>

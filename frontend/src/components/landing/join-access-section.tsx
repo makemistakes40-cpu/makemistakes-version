@@ -51,7 +51,7 @@ export function JoinAccessSection() {
                 <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20 text-[10px] font-sans tracking-wider font-bold text-brand-emerald uppercase">
                   <span>🚀 Limited Release</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-sans font-bold tracking-tight text-white">
+                <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-white">
                   Join Early Access Waitlist
                 </h2>
                 <p className="text-sm text-brand-slate leading-relaxed font-sans">
@@ -112,14 +112,14 @@ export function JoinAccessSection() {
                 ✓
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl font-sans font-bold tracking-tight text-white">
+                <h3 className="text-2xl font-display font-bold tracking-tight text-white">
                   Invitation Request Confirmed!
                 </h3>
                 <p className="text-sm text-brand-slate leading-relaxed font-sans">
                   Thank you, <strong className="text-white">{name}</strong>. We've added <span className="text-brand-violet font-semibold">{email}</span> to our developer onboarding list. You will receive an access token as spots open up.
                 </p>
               </div>
-              <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-[16px] w-full text-xs text-brand-slate font-mono uppercase tracking-wider space-y-1.5">
+              <div className="p-4 bg-brand-violet/5 border border-brand-violet/10 rounded-[14px] w-full text-xs text-brand-slate font-mono uppercase tracking-wider space-y-1.5">
                 <div className="flex justify-between">
                   <span>Registration Spot:</span>
                   <span className="text-white font-bold">#MM-{Math.floor(1000 + Math.random() * 9000)}</span>

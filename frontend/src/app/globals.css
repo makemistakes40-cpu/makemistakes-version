@@ -1,36 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #010102; /* Linear Canvas (near-black) */
-  --color-brand-bg-sec: #0f1011; /* Linear Surface 1 (charcoal) */
-  --color-brand-card: #0f1011; /* Linear Surface 1 (charcoal) */
-  --color-brand-card-light: #141516; /* Linear Surface 2 */
-  --color-brand-card-hover: #141516; /* Linear Surface 2 */
-  --color-brand-border: #23252a; /* Linear Hairline */
-  --color-brand-border-hover: #34343a; /* Linear Hairline Strong */
-  --color-brand-divider: #23252a; /* Linear Hairline */
+  --color-brand-bg: #0B0F14;
+  --color-brand-bg-sec: #11161D;
+  --color-brand-card: #202A36;
+  --color-brand-card-light: #1E2630;
+  --color-brand-card-hover: #1E2630;
+  --color-brand-border: #2D3748;
+  --color-brand-border-hover: #4E5D78;
+  --color-brand-divider: #2D3748;
   
-  /* Primary Brand Accent (Linear lavender-blue) */
-  --color-brand-violet: #5e6ad2;
-  --color-brand-violet-hover: #828fff;
-  --color-brand-violet-focus: rgba(94, 106, 210, 0.45);
+  /* Primary Brand Accent (Mint Green) */
+  --color-brand-violet: #00C896;
+  --color-brand-violet-hover: #00B386;
+  --color-brand-violet-focus: rgba(0, 200, 150, 0.35);
   
   /* Semantic Colors */
-  --color-brand-emerald: #27a644; /* Linear success green */
-  --color-brand-emerald-hover: #22c55e;
+  --color-brand-emerald: #22C55E;
+  --color-brand-emerald-hover: #16A34A;
   
   /* Text Ink Colors */
-  --color-brand-slate: #d0d6e0; /* Linear Ink Muted */
-  --color-brand-ink-muted: #f7f8f8; /* Linear Ink */
-  --color-brand-ink-dark: #8a8f98; /* Linear Ink Subtle */
+  --color-brand-slate: #CBD5E1; /* Secondary Text */
+  --color-brand-ink-muted: #F8FAFC; /* Primary Text */
+  --color-brand-ink-dark: #94A3B8; /* Muted Text */
   
   --font-sans: var(--font-inter), sans-serif;
-  --font-display: var(--font-inter), sans-serif;
+  --font-display: var(--font-sora), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
 :root {
-  --background: #010102;
-  --foreground: #f7f8f8;
+  --background: #0B0F14;
+  --foreground: #F8FAFC;
 }
 
 body {
@@ -42,10 +43,8 @@ body {
 
 /* Glassmorphism custom classes - Vercel/Linear hybrid */
 .glass-panel {
-  background: rgba(24, 24, 27, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(39, 39, 42, 0.85);
+  background: #202A36;
+  border: 1px solid #2D3748;
 }
 
 .glass-panel-glow {
@@ -54,13 +53,13 @@ body {
 
 /* Custom Gradients - Minimal white-to-slate */
 .gradient-text {
-  background: linear-gradient(135deg, #FAFAFA 40%, #A1A1AA 100%);
+  background: linear-gradient(135deg, #F8FAFC 40%, #CBD5E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-brand {
-  background: linear-gradient(135deg, #4F46E5 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #00C896 0%, #7AF8D4 100%);
 }
 
 /* Scrollbar customization matching the dark aesthetic */
@@ -70,15 +69,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090B;
+  background: #11161D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
+  background: #2D3748;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2E2E32;
+  background: #4E5D78;
 }
 
