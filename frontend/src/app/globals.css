@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #09090B; /* Primary Background */
-  --color-brand-bg-sec: #111113; /* Secondary Background */
-  --color-brand-card: #18181B; /* Surface background */
-  --color-brand-card-light: #222226; /* Elevated Surface background */
-  --color-brand-card-hover: #222226;
-  --color-brand-border: #27272A; /* Border color */
-  --color-brand-border-hover: #2E2E32;
-  --color-brand-divider: #2E2E32; /* Divider color */
+  --color-brand-bg: #010102; /* Linear Canvas (near-black) */
+  --color-brand-bg-sec: #0f1011; /* Linear Surface 1 (charcoal) */
+  --color-brand-card: #0f1011; /* Linear Surface 1 (charcoal) */
+  --color-brand-card-light: #141516; /* Linear Surface 2 */
+  --color-brand-card-hover: #141516; /* Linear Surface 2 */
+  --color-brand-border: #23252a; /* Linear Hairline */
+  --color-brand-border-hover: #34343a; /* Linear Hairline Strong */
+  --color-brand-divider: #23252a; /* Linear Hairline */
   
-  /* Primary Brand Accent */
-  --color-brand-violet: #4F46E5;
-  --color-brand-violet-hover: #4338CA;
-  --color-brand-violet-focus: rgba(79, 70, 229, 0.45);
+  /* Primary Brand Accent (Linear lavender-blue) */
+  --color-brand-violet: #5e6ad2;
+  --color-brand-violet-hover: #828fff;
+  --color-brand-violet-focus: rgba(94, 106, 210, 0.45);
   
   /* Semantic Colors */
-  --color-brand-emerald: #22C55E;
-  --color-brand-emerald-hover: #16A34A;
+  --color-brand-emerald: #27a644; /* Linear success green */
+  --color-brand-emerald-hover: #22c55e;
   
   /* Text Ink Colors */
-  --color-brand-slate: #A1A1AA; /* Secondary text */
-  --color-brand-ink-muted: #FAFAFA; /* Primary text */
-  --color-brand-ink-dark: #71717A; /* Muted text */
+  --color-brand-slate: #d0d6e0; /* Linear Ink Muted */
+  --color-brand-ink-muted: #f7f8f8; /* Linear Ink */
+  --color-brand-ink-dark: #8a8f98; /* Linear Ink Subtle */
   
   --font-sans: var(--font-inter), sans-serif;
   --font-display: var(--font-inter), sans-serif;
 }
 
 :root {
-  --background: #09090B;
-  --foreground: #FAFAFA;
+  --background: #010102;
+  --foreground: #f7f8f8;
 }
 
 body {

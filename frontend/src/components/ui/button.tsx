@@ -19,7 +19,7 @@ export function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-sans font-semibold rounded-[10px] transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-violet disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-sans font-semibold rounded-[8px] transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-violet disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
     primary: 'bg-brand-violet text-white hover:bg-brand-violet-hover hover:scale-[1.01]',
