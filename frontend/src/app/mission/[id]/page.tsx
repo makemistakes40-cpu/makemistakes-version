@@ -161,9 +161,9 @@ export const authorize = (requiredRole: string) => {
                 </div>
 
                 <div className="space-y-2">
-                  <span className="text-[9px] uppercase font-mono tracking-widest text-brand-slate font-bold">Active Onboarding Mission</span>
-                  <h2 className="text-2xl font-display font-black text-white uppercase tracking-wider">{mission.title}</h2>
-                  <p className="text-xs text-brand-slate leading-relaxed max-w-2xl">{mission.description}</p>
+                  <span className="text-[9px] uppercase font-sans tracking-widest text-brand-slate font-bold">Active Onboarding Mission</span>
+                  <h2 className="text-2xl font-display font-bold tracking-tight text-white uppercase">{mission.title}</h2>
+                  <p className="text-xs text-brand-slate leading-relaxed max-w-2xl font-sans">{mission.description}</p>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-2 border-t border-b border-brand-border/45">
@@ -198,7 +198,7 @@ export const authorize = (requiredRole: string) => {
               className="w-full"
             >
               <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
-                <h3 className="text-lg font-display font-black text-white uppercase tracking-wider">Concept: Role-Based Gates</h3>
+                <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">Concept: Role-Based Gates</h3>
                 
                 <div className="space-y-4 text-xs text-brand-slate leading-relaxed">
                   <p>
@@ -229,7 +229,7 @@ export const authorize = (requiredRole: string) => {
               className="w-full"
             >
               <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
-                <h3 className="text-lg font-display font-black text-white uppercase tracking-wider">Best Practices Sandbox</h3>
+                <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">Best Practices Sandbox</h3>
 
                 <div className="space-y-4">
                   <div className="p-4 bg-red-500/5 border border-red-500/10 rounded-2xl text-left space-y-2">
@@ -268,7 +268,7 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
               className="w-full max-w-xl"
             >
               <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
-                <h3 className="text-lg font-display font-black text-white uppercase tracking-wider">DNA Security Check</h3>
+                <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">DNA Security Check</h3>
                 
                 <p className="text-xs text-brand-slate leading-relaxed">
                   Which HTTP status code should be returned if a signed-in student attempts to access a protected administration workspace endpoint?
@@ -320,8 +320,8 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
             >
               <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl text-left space-y-6 shadow-2xl">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-display font-black text-white uppercase tracking-wider">Mission Sandbox Playground</h3>
-                  <span className="text-[10px] font-mono text-brand-slate">Required: export authorize middleware</span>
+                  <h3 className="text-lg font-display font-bold tracking-tight text-white uppercase">Mission Sandbox Playground</h3>
+                  <span className="text-[10px] font-sans text-brand-slate">Required: export authorize middleware</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -383,7 +383,7 @@ app.post('/api/admin/users', authorize('MANAGE_USERS'), controller);`}
             >
               <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
                 <span className="text-4xl animate-bounce block">🏆</span>
-                <h3 className="text-2xl font-display font-black text-white uppercase tracking-wider">Mission Accomplished!</h3>
+                <h3 className="text-2xl font-display font-bold tracking-tight text-white uppercase">Mission Accomplished!</h3>
                 
                 <div className="p-4 bg-brand-emerald/10 border border-brand-emerald/20 rounded-2xl inline-block px-8">
                   <span className="text-2xl font-display font-black text-brand-emerald">+{mission.xpReward} XP</span>

@@ -131,10 +131,10 @@ export default function OnboardingPage() {
           >
             <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
               <span className="text-4xl">👑</span>
-              <h2 className="text-3xl font-display font-black text-white uppercase tracking-wider">
+              <h2 className="text-3xl font-display font-bold tracking-tight text-white uppercase">
                 Welcome to Pro Academy
               </h2>
-              <p className="text-xs text-brand-slate max-w-md mx-auto leading-relaxed">
+              <p className="text-xs text-brand-slate max-w-md mx-auto leading-relaxed font-sans">
                 You have successfully upgraded your membership. The platform is ready to customize an AI-powered learning workspace designed around your career goals.
               </p>
 
@@ -191,8 +191,8 @@ export default function OnboardingPage() {
                   🤖
                 </div>
                 <div>
-                  <h3 className="font-display font-black text-white text-base uppercase">AI Mentor</h3>
-                  <span className="text-[10px] text-brand-emerald font-mono uppercase font-bold">Online & Analyzing</span>
+                  <h3 className="font-display font-bold text-white text-base uppercase">AI Mentor</h3>
+                  <span className="text-[10px] text-brand-emerald font-sans uppercase font-semibold">Online & Analyzing</span>
                 </div>
               </div>
 
@@ -221,10 +221,10 @@ export default function OnboardingPage() {
                 <span className="text-[10px] font-mono uppercase tracking-widest text-brand-violet font-bold">
                   Step 1 of 2: AI Assessment
                 </span>
-                <h3 className="text-xl font-display font-black text-white uppercase tracking-wider">
+                <h3 className="text-xl font-display font-bold text-white uppercase tracking-tight">
                   🎯 What is your dream career goal?
                 </h3>
-                <p className="text-xs text-brand-slate leading-relaxed">
+                <p className="text-xs text-brand-slate leading-relaxed font-sans">
                   We'll personalize your learning roadmap, coding challenges, projects, interview preparation, and skill recommendations based on your career goal.
                 </p>
               </div>
@@ -319,7 +319,7 @@ export default function OnboardingPage() {
                 <span className="text-[10px] font-mono uppercase tracking-widest text-brand-emerald font-bold">
                   Step 2 of 2: AI Assessment
                 </span>
-                <h3 className="text-xl font-display font-black text-white uppercase tracking-wider">
+                <h3 className="text-xl font-display font-bold text-white uppercase tracking-tight">
                   🧬 Developer DNA Assessment
                 </h3>
               </div>
@@ -428,7 +428,7 @@ export default function OnboardingPage() {
           >
             <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
               <div className="h-16 w-16 mx-auto rounded-full border-2 border-brand-violet border-t-transparent animate-spin" />
-              <h3 className="text-lg font-display font-black text-white uppercase tracking-wider">
+              <h3 className="text-lg font-display font-bold text-white uppercase tracking-tight">
                 AI Engines Processing
               </h3>
               <p className="text-xs font-mono text-brand-slate animate-pulse">
@@ -448,7 +448,7 @@ export default function OnboardingPage() {
             className="w-full max-w-3xl text-left"
           >
             <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
-              <h3 className="text-xl font-display font-black text-white uppercase tracking-wider">
+              <h3 className="text-xl font-display font-bold text-white uppercase tracking-tight">
                 🗺️ Tailored Roadmap Generated
               </h3>
 
@@ -488,7 +488,7 @@ export default function OnboardingPage() {
           >
             <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl space-y-6">
               <span className="text-4xl">🔓</span>
-              <h3 className="text-2xl font-display font-black text-white uppercase tracking-wider">
+              <h3 className="text-2xl font-display font-bold text-white uppercase tracking-tight">
                 Academy Districts Unlocked
               </h3>
 

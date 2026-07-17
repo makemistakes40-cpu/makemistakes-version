@@ -18,7 +18,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={`flex flex-col space-y-2 ${fullWidth ? 'w-full' : ''}`}>
         {label && (
-          <label className="text-xs font-display font-medium text-brand-slate tracking-wider uppercase">
+          <label className="text-xs font-sans font-semibold text-brand-slate tracking-wider uppercase">
             {label}
           </label>
         )}
@@ -48,7 +48,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {error && (
-          <span className="text-xs text-red-500 font-display font-medium">
+          <span className="text-xs text-red-400 font-sans font-semibold mt-1">
             {error}
           </span>
         )}

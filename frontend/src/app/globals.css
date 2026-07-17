@@ -1,73 +1,80 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #090b11;
-  --color-brand-card: #111422;
-  --color-brand-card-light: #181d2f;
-  --color-brand-border: #1f2538;
-  --color-brand-violet: #8b5cf6;
-  --color-brand-violet-hover: #7c3aed;
-  --color-brand-emerald: #10b981;
-  --color-brand-emerald-hover: #059669;
-  --color-brand-slate: #94a3b8;
+  --color-brand-bg: #010102; /* Purest deep black background (Linear canvas) */
+  --color-brand-card: #0f1011; /* Charcoal surface card (Linear surface-1) */
+  --color-brand-card-light: #141516; /* Linear surface-2 */
+  --color-brand-card-hover: #18191a; /* Linear surface-3 */
+  --color-brand-border: #23252a; /* Hairline border (Linear) */
+  --color-brand-border-hover: #34343a; /* Strong hairline (Linear) */
+  
+  /* Brand Chromatic Lavender Accent (Linear) */
+  --color-brand-violet: #5e6ad2;
+  --color-brand-violet-hover: #828fff;
+  --color-brand-violet-focus: #5e69d1;
+  
+  /* Brand Semantic Success Green (Linear success) */
+  --color-brand-emerald: #27a644;
+  --color-brand-emerald-hover: #2ea043;
+  
+  /* Text Ink Colors */
+  --color-brand-slate: #8a8f98; /* Muted gray (Linear ink-subtle) */
+  --color-brand-ink-muted: #d0d6e0; /* Medium gray (Linear ink-muted) */
   
   --font-sans: var(--font-inter), sans-serif;
   --font-display: var(--font-outfit), sans-serif;
 }
 
 :root {
-  --background: #090b11;
-  --foreground: #f8fafc;
+  --background: #010102;
+  --foreground: #f7f8f8; /* Linear light gray ink */
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism custom classes */
+/* Glassmorphism custom classes - Linear/Airbnb hybrid */
 .glass-panel {
-  background: rgba(17, 20, 34, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 16, 17, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(35, 37, 42, 0.65);
 }
 
 .glass-panel-glow {
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+  box-shadow: 0 0 50px rgba(94, 106, 210, 0.12);
 }
 
-/* Custom Gradients */
+/* Custom Gradients - Linear inspired */
 .gradient-text {
-  background: linear-gradient(135deg, #f8fafc 30%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #ffffff 40%, #8a8f98 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-brand {
-  background: linear-gradient(135deg, #8b5cf6 0%, #10b981 100%);
+  background: linear-gradient(135deg, #5e6ad2 0%, #27a644 100%);
 }
 
-.glow-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+/* Scrollbar customization matching the dark aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.glow-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s ease;
-  pointer-events: none;
+::-webkit-scrollbar-track {
+  background: #010102;
 }
 
-.glow-btn:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+::-webkit-scrollbar-thumb {
+  background: #23252a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #34343a;
 }

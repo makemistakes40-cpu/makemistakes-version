@@ -147,10 +147,10 @@ export default function SignupPage() {
 
       <div className="w-full max-w-lg z-10">
         <div className="text-center mb-8">
-          <Link href="/" className="font-display font-black text-3xl tracking-tight text-white inline-block mb-3">
+          <Link href="/" className="font-display font-bold text-3xl tracking-tight text-white inline-block mb-3">
             Make<span className="text-brand-violet">Mistakes</span>
           </Link>
-          <p className="text-sm text-brand-slate">Create your account and unlock personalized lessons</p>
+          <p className="text-sm text-brand-slate font-sans">Create your account and unlock personalized lessons</p>
         </div>
 
         <Card glow className="bg-brand-card/85 p-8 border border-brand-border overflow-hidden">
@@ -165,7 +165,7 @@ export default function SignupPage() {
                   }`}>
                     {s}
                   </div>
-                  <span className={`text-[10px] uppercase font-display tracking-widest hidden sm:inline ${
+                  <span className={`text-[10px] uppercase font-sans tracking-widest hidden sm:inline ${
                     step === s ? 'text-brand-violet font-semibold' : 'text-brand-slate/50'
                   }`}>
                     {s === 1 ? 'Credentials' : s === 2 ? 'Education' : 'Preferences'}
@@ -176,7 +176,7 @@ export default function SignupPage() {
           )}
 
           {serverError && (
-            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-red-500 font-display font-medium text-center mb-6">
+            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-xs text-red-400 font-sans font-semibold text-center mb-6">
               {serverError}
             </div>
           )}
@@ -241,16 +241,16 @@ export default function SignupPage() {
                     />
 
                     <div className="flex flex-col space-y-2">
-                      <label className="text-xs font-display font-medium text-brand-slate tracking-wider uppercase">
+                      <label className="text-xs font-sans font-semibold text-brand-slate tracking-wider uppercase">
                         Account Purpose
                       </label>
                       <div className="grid grid-cols-2 gap-3">
                         <button
                           type="button"
                           onClick={() => setRole('STUDENT')}
-                          className={`py-2.5 px-3 rounded-xl border text-xs font-display font-semibold transition-all duration-300 ${
+                          className={`py-2.5 px-3 rounded-xl border text-xs font-sans font-semibold transition-all duration-300 cursor-pointer ${
                             role === 'STUDENT'
-                              ? 'bg-brand-violet/20 border-brand-violet text-white'
+                              ? 'bg-brand-violet/10 border-brand-violet text-white'
                               : 'bg-brand-card border-brand-border text-brand-slate hover:border-brand-violet/30'
                           }`}
                           disabled={loading}
@@ -260,9 +260,9 @@ export default function SignupPage() {
                         <button
                           type="button"
                           onClick={() => setRole('RECRUITER')}
-                          className={`py-2.5 px-3 rounded-xl border text-xs font-display font-semibold transition-all duration-300 ${
+                          className={`py-2.5 px-3 rounded-xl border text-xs font-sans font-semibold transition-all duration-300 cursor-pointer ${
                             role === 'RECRUITER'
-                              ? 'bg-brand-violet/20 border-brand-violet text-white'
+                              ? 'bg-brand-violet/10 border-brand-violet text-white'
                               : 'bg-brand-card border-brand-border text-brand-slate hover:border-brand-violet/30'
                           }`}
                           disabled={loading}

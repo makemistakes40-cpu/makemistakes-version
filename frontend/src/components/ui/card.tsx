@@ -21,7 +21,7 @@ export function Card({
   const containerClass = `
     glass-panel rounded-2xl p-6 transition-all duration-300
     ${glow ? 'glass-panel-glow' : ''}
-    ${onClick ? 'cursor-pointer hover:border-brand-violet/30 hover:bg-brand-card-light/40' : ''}
+    ${onClick ? 'cursor-pointer hover:border-brand-violet/40 hover:bg-brand-card-hover/90 hover:shadow-lg hover:shadow-brand-violet/5' : ''}
     ${className}
   `;
 

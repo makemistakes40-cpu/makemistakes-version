@@ -53,10 +53,10 @@ export function JoinAccessSection() {
                 <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20 text-[10px] font-mono tracking-wider font-bold text-brand-emerald uppercase">
                   <span>🚀 Limited Release</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-display font-black text-white">
+                <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-white">
                   Join Early Access Waitlist
                 </h2>
-                <p className="text-sm text-brand-slate leading-relaxed">
+                <p className="text-sm text-brand-slate leading-relaxed font-sans">
                   Apply today to secure your invitation to the private alpha. Get first-hand access to compiler mistake diagnostics, personalized developer maps, and recruiter matching features.
                 </p>
               </div>
@@ -114,10 +114,10 @@ export function JoinAccessSection() {
                 ✓
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl font-display font-black text-white">
+                <h3 className="text-2xl font-display font-bold tracking-tight text-white">
                   Invitation Request Confirmed!
                 </h3>
-                <p className="text-sm text-brand-slate leading-relaxed">
+                <p className="text-sm text-brand-slate leading-relaxed font-sans">
                   Thank you, <strong className="text-white">{name}</strong>. We've added <span className="text-brand-violet font-semibold font-mono">{email}</span> to our developer onboarding list. You will receive an access token as spots open up.
                 </p>
               </div>

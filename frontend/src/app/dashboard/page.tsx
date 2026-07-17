@@ -215,10 +215,10 @@ export default function DashboardPage() {
         {/* Profile Banner */}
         <section className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-brand-border/45 pb-8">
           <div>
-            <h1 className="text-3xl font-display font-black text-white">
+            <h1 className="text-3xl font-display font-bold tracking-tight text-white">
               {isAdminViewActive ? 'Admin Portal' : 'Student Dashboard'}
             </h1>
-            <p className="text-sm text-brand-slate">
+            <p className="text-sm text-brand-slate font-sans">
               {isAdminViewActive 
                 ? 'Manage active manual payment verifications queue.' 
                 : 'Explore custom milestones tailored dynamically to your profile.'}
@@ -497,10 +497,10 @@ export default function DashboardPage() {
               {/* Personalized roadmap timeline milestones */}
               <div className="lg:col-span-2 space-y-6">
                 <div className="flex flex-col space-y-1">
-                  <h3 className="text-xl font-display font-black text-white flex items-center space-x-2">
+                  <h3 className="text-xl font-display font-bold tracking-tight text-white flex items-center space-x-2">
                     <span>🎯 Your AI Learning Path</span>
                   </h3>
-                  <span className="text-[10px] text-brand-violet font-mono uppercase tracking-widest font-semibold">
+                  <span className="text-[10px] text-brand-violet font-sans uppercase tracking-widest font-semibold">
                     Target: {roadmap.dreamCompany} stack
                   </span>
                 </div>
@@ -532,10 +532,10 @@ export default function DashboardPage() {
                             )}
                           </div>
                           
-                          <h4 className="text-sm font-display font-bold text-white flex items-center">
+                          <h4 className="text-sm font-sans font-semibold text-white flex items-center">
                             {milestone.title}
                           </h4>
-                          <p className="text-xs text-brand-slate leading-relaxed">
+                          <p className="text-xs text-brand-slate leading-relaxed font-sans">
                             {isStepLocked
                               ? 'This stage is locked on your Free Account. Upgrade to unlock specialized lessons, diagnostic mistake sandboxes, and capstone recruiter projects.'
                               : milestone.description}
@@ -658,10 +658,10 @@ export default function DashboardPage() {
                 )}
 
                 <div className="flex flex-col space-y-1">
-                  <h3 className="text-lg font-display font-black text-white flex items-center">
+                  <h3 className="text-lg font-display font-bold tracking-tight text-white flex items-center">
                     <span>🏆 Global Leaderboard</span>
                   </h3>
-                  <span className="text-[10px] text-brand-slate">Compete with global peers solving mistakes</span>
+                  <span className="text-[10px] text-brand-slate font-sans">Compete with global peers solving mistakes</span>
                 </div>
 
                 <Card glow className="bg-brand-card/75 p-6 border border-brand-border">

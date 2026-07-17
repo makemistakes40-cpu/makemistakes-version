@@ -13,7 +13,7 @@ const HERO_VARIANTS = {
 
 export function HeroSection() {
   return (
-    <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 flex flex-col items-center text-center">
+    <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 flex flex-col items-center text-center">
       
       <motion.div
         initial="hidden"
@@ -21,27 +21,27 @@ export function HeroSection() {
         variants={HERO_VARIANTS}
         className="space-y-6 max-w-3xl"
       >
-        <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-violet/10 border border-brand-violet/20 text-xs font-display font-medium text-brand-violet">
+        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-violet/10 border border-brand-violet/20 text-xs font-sans font-semibold text-brand-violet">
           <span>✨ Reimagining developer learning</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-display font-black tracking-tight text-white leading-tight">
+        <h1 className="text-4xl sm:text-6xl font-display font-bold tracking-tight sm:tracking-tighter text-white leading-[1.1]">
           The best developers are built on{' '}
-          <span className="gradient-text">Mistakes.</span>
+          <span className="bg-gradient-to-r from-white via-brand-ink-muted to-brand-violet bg-clip-text text-transparent">Mistakes.</span>
         </h1>
 
-        <p className="text-base sm:text-xl text-brand-slate max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-brand-slate max-w-2xl mx-auto leading-relaxed font-sans">
           Stop avoiding compiler bugs. MakeMistakes is an AI-guided platform that turns code failures, syntax crashes, and logic bugs into interactive programming lessons.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link href="/signup">
-            <Button size="lg" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full sm:w-auto font-sans">
               Start Learning Free
             </Button>
           </Link>
           <Link href="/login">
-            <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+            <Button variant="secondary" size="lg" className="w-full sm:w-auto font-sans">
               Sign In to Account
             </Button>
           </Link>

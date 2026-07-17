@@ -56,14 +56,14 @@ export function Navbar() {
   const unreadCount = notifications.filter((n) => !n.read).length;
 
   return (
-    <nav className="sticky top-0 z-50 glass-panel border-b border-brand-border py-4 bg-brand-bg/85 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 py-3.5 bg-brand-bg/75 backdrop-blur-md border-b border-brand-border/80 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-display font-black text-2xl tracking-tight text-white flex items-center">
+          <span className="font-display font-bold text-xl tracking-tight text-white flex items-center">
             Make<span className="text-brand-violet">Mistakes</span>
-            <span className="ml-1.5 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-brand-emerald text-brand-bg rounded-md">
+            <span className="ml-1.5 px-2 py-0.5 text-[8px] font-bold uppercase tracking-widest bg-brand-violet/10 border border-brand-violet/30 text-brand-violet rounded-full">
               Beta
             </span>
           </span>

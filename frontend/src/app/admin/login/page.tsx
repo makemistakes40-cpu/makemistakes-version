@@ -50,9 +50,9 @@ export default function AdminLoginPage() {
         className="w-full max-w-md"
       >
         <Card className="bg-brand-card/90 border border-brand-border p-8 rounded-3xl relative z-10 shadow-2xl">
-          <div className="text-center space-y-2 mb-8">
+          <div className="text-center space-y-2 mb-8 font-sans">
             <span className="text-3xl">🛡️</span>
-            <h2 className="text-2xl font-display font-black text-white uppercase tracking-wider">
+            <h2 className="text-2xl font-display font-bold tracking-tight text-white uppercase">
               Admin Portal
             </h2>
             <p className="text-xs text-brand-slate">
@@ -64,7 +64,7 @@ export default function AdminLoginPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 text-xs text-red-400 font-display leading-relaxed mb-6"
+              className="p-4 rounded-2xl bg-red-500/5 border border-red-500/20 text-xs text-red-400 font-sans font-semibold leading-relaxed mb-6"
             >
               ⚠️ {errorMsg}
             </motion.div>
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-1.5">
-              <label className="text-[10px] uppercase font-mono tracking-widest text-brand-slate font-bold">
+              <label className="text-[10px] uppercase font-sans font-semibold tracking-widest text-brand-slate">
                 Email Address
               </label>
               <Input
@@ -85,7 +85,7 @@ export default function AdminLoginPage() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-[10px] uppercase font-mono tracking-widest text-brand-slate font-bold">
+              <label className="text-[10px] uppercase font-sans font-semibold tracking-widest text-brand-slate">
                 Password
               </label>
               <Input

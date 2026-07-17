@@ -344,24 +344,24 @@ export default function AdminDashboardPage() {
                   exit={{ opacity: 0 }}
                   className="space-y-6"
                 >
-                  <h3 className="text-xl font-display font-black text-white">Platform Statistics Overview</h3>
+                  <h3 className="text-xl font-display font-bold tracking-tight text-white">Platform Statistics Overview</h3>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
-                      <span className="text-[10px] uppercase font-mono tracking-wider text-brand-slate block">DAU (24h)</span>
-                      <span className="text-2xl font-display font-black text-white block mt-1">{analytics.dau}</span>
+                      <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">DAU (24h)</span>
+                      <span className="text-2xl font-display font-bold tracking-tight text-white block mt-1">{analytics.dau}</span>
                     </Card>
                     <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
-                      <span className="text-[10px] uppercase font-mono tracking-wider text-brand-slate block">Registrations</span>
-                      <span className="text-2xl font-display font-black text-white block mt-1">{analytics.registrations}</span>
+                      <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">Registrations</span>
+                      <span className="text-2xl font-display font-bold tracking-tight text-white block mt-1">{analytics.registrations}</span>
                     </Card>
                     <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
-                      <span className="text-[10px] uppercase font-mono tracking-wider text-brand-slate block">Active Subscriptions</span>
-                      <span className="text-2xl font-display font-black text-white block mt-1">{analytics.subscriptions}</span>
+                      <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">Active Subscriptions</span>
+                      <span className="text-2xl font-display font-bold tracking-tight text-white block mt-1">{analytics.subscriptions}</span>
                     </Card>
                     <Card className="bg-brand-card/85 p-5 border border-brand-border text-left">
-                      <span className="text-[10px] uppercase font-mono tracking-wider text-brand-slate block">Revenue Sum</span>
-                      <span className="text-2xl font-display font-black text-brand-emerald block mt-1">${analytics.revenue.toFixed(2)}</span>
+                      <span className="text-[10px] uppercase font-sans font-semibold tracking-wider text-brand-slate block">Revenue Sum</span>
+                      <span className="text-2xl font-display font-bold tracking-tight text-brand-emerald block mt-1">${analytics.revenue.toFixed(2)}</span>
                     </Card>
                   </div>
 
@@ -403,7 +403,7 @@ export default function AdminDashboardPage() {
                   className="space-y-6"
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-xl font-display font-black text-white">Platform Users Directory</h3>
+                    <h3 className="text-xl font-display font-bold tracking-tight text-white">Platform Users Directory</h3>
                     <Input
                       placeholder="Search accounts..."
                       value={userSearch}
@@ -536,7 +536,7 @@ export default function AdminDashboardPage() {
                   className="space-y-6"
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-xl font-display font-black text-white">Course Catalog overrides</h3>
+                    <h3 className="text-xl font-display font-bold tracking-tight text-white">Course Catalog overrides</h3>
                     <Button
                       variant="primary"
                       onClick={() => {
@@ -615,7 +615,7 @@ export default function AdminDashboardPage() {
                   exit={{ opacity: 0 }}
                   className="space-y-6"
                 >
-                  <h3 className="text-xl font-display font-black text-white">Administrative Activity logs</h3>
+                  <h3 className="text-xl font-display font-bold tracking-tight text-white">Administrative Activity logs</h3>
 
                   <div className="bg-brand-card/75 border border-brand-border rounded-2xl p-6 relative">
                     <div className="absolute left-[33px] top-10 bottom-10 w-0.5 bg-brand-border/45" />
