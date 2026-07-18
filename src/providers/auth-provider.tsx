@@ -65,8 +65,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Protected paths and redirect triggers
   useEffect(() => {
     if (!isLoading) {
-      const isProtectedRoute = pathname.startsWith('/dashboard');
-      const isAuthRoute = pathname === '/login' || pathname === '/signup';
+      const isProtectedRoute = pathname?.startsWith('/dashboard') || false;
+      const isAuthRoute = pathname ? (pathname === '/login' || pathname === '/signup') : false;
 
       if (isProtectedRoute && !user) {
         router.push('/login');

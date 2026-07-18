@@ -20,7 +20,7 @@ interface TimelineStep {
 function ProcessingContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const paymentId = searchParams.get('id');
+  const paymentId = searchParams?.get('id') || null;
 
   const [paymentStatus, setPaymentStatus] = useState<string>('PROCESSING');
   const [timeline, setTimeline] = useState<TimelineStep[]>([]);

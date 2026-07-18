@@ -28,7 +28,8 @@ interface FeedbackLog {
 
 export default function MissionPage() {
   const router = useRouter();
-  const { id } = useParams();
+  const params = useParams();
+  const id = params?.id as string;
 
   const [mission, setMission] = useState<Mission | null>(null);
   const [loading, setLoading] = useState(true);

@@ -3,7 +3,7 @@ import path from 'path';
 import { z } from 'zod';
 
 // Load environment variables from .env file
-dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 
 const envSchema = z.object({
   PORT: z.coerce.number().default(5001),

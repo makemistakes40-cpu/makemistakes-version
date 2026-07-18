@@ -1,16 +1,12 @@
 const getApiUrl = () => {
-  const envUrl = process.env.NEXT_PUBLIC_API_URL;
   if (typeof window !== 'undefined') {
-    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    if (isLocalhost) {
-      return envUrl || 'http://localhost:5001/api';
-    }
-    if (envUrl && !envUrl.includes('localhost') && !envUrl.includes('127.0.0.1')) {
-      return envUrl;
-    }
-    return 'https://backend-sigma-seven-41.vercel.app/api';
+    return '/api';
   }
-  return envUrl || 'https://backend-sigma-seven-41.vercel.app/api';
+  const envUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (envUrl) return envUrl;
+  const vercelUrl = process.env.VERCEL_URL;
+  if (vercelUrl) return `https://${vercelUrl}/api`;
+  return 'http://localhost:3000/api';
 };
 
 const BASE_URL = getApiUrl();
