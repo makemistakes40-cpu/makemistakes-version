@@ -1,8 +1,19 @@
-const BASE_URL = 
-  process.env.NEXT_PUBLIC_API_URL || 
-  (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
-    ? 'http://localhost:5001/api' 
-    : 'https://backend-sigma-seven-41.vercel.app/api');
+const getApiUrl = () => {
+  const envUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (typeof window !== 'undefined') {
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (isLocalhost) {
+      return envUrl || 'http://localhost:5001/api';
+    }
+    if (envUrl && !envUrl.includes('localhost') && !envUrl.includes('127.0.0.1')) {
+      return envUrl;
+    }
+    return 'https://backend-sigma-seven-41.vercel.app/api';
+  }
+  return envUrl || 'https://backend-sigma-seven-41.vercel.app/api';
+};
+
+const BASE_URL = getApiUrl();
 
 export class ApiError extends Error {
   public statusCode: number;
