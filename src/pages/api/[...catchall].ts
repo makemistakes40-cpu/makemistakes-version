@@ -13,7 +13,7 @@ export default async function handler(req: any, res: any) {
     console.error('[API Catchall Critical Error]:', error);
     res.status(500).json({
       status: 'error',
-      message: 'Critical startup error occurred in API serverless function.',
+      message: `Critical startup error: ${error.message || String(error)}`,
       error: error.message || String(error),
       stack: error.stack || null,
     });
