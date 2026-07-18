@@ -1,5 +1,3 @@
-import app from '../../api-server/app';
-
 export const config = {
   api: {
     bodyParser: false,
@@ -7,6 +5,17 @@ export const config = {
   },
 };
 
-export default function handler(req: any, res: any) {
-  return app(req, res);
+export default async function handler(req: any, res: any) {
+  try {
+    const { default: app } = await import('../../api-server/app');
+    return app(req, res);
+  } catch (error: any) {
+    console.error('[API Catchall Critical Error]:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Critical startup error occurred in API serverless function.',
+      error: error.message || String(error),
+      stack: error.stack || null,
+    });
+  }
 }
